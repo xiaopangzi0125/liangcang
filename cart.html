@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			li{
+				list-style: none;
+			}
+			img{
+				border: 0;
+			}
+			/*-------------------顶部---------------------------*/
+			#topbox{
+				width: 100%;
+			}
+			#headerbox{
+				width: 100%;height: 56px;background: #25292e;
+			}
+			#header{
+				width: 1000px;margin: 0 auto;overflow: hidden;
+			}
+			#header h1{
+				width: 96px;height: 38px;margin-top: 10px;
+				float:left;background: url(img/icon.png) no-repeat ;
+			}
+			.rtbox{
+				width: 260px;height: 56px;float: right;font-size: 12px;
+			}
+			.rtbox p a{
+				line-height: 56px;color: #ccc;display: block;float: left;
+			}
+			#login a{
+				padding: 0 16px 0 8px;
+			}
+			.rtbox ul{
+				float: right;
+			}
+			.rtbox ul li{
+				float:left;background: url(img/bg1.png) no-repeat center left;line-height: 56px;
+			}
+			.rtbox ul li a{
+				color: #666;padding: 0 15px;
+			}
+			.rtbox ul li a:hover{
+				color: #ccc;
+			}
+			.lastop{
+				margin-right: -14px;
+			}
+			/*-----------------------nav导航----------------------------------------*/
+			#nav{
+				width: 1000px;height: 46px;margin: 0 auto;border-bottom:4px solid #ededed;
+			}
+			.navigation{
+				width: 764px;line-height: 46px;font-size: 14px;float: left;
+			}
+			.navigation li a{
+				float: left;display: block;padding:0 50px;text-align: center;margin-right: 36px;color: black;
+			}
+			.navigation li a:hover{
+				border-bottom: 4px solid black;
+			}
+			.navigation .firstl a{
+				padding: 0 80px 0 0;margin-right: 0px;
+			}
+			
+			/*--------------------------搜索----------------------------*/
+			#search{
+				width: 236px;height: 46px;line-height: 45px;border-bottom: 4px solid #2529e;float: right;
+			}
+			#search #sousuo{
+				width: 190px;height: 46px;border: none;float: left;
+			}
+			#search_icon{
+				width: 46px;height: 46px;float: right;
+				background: url(img/icon.png) no-repeat  -166px -142px;
+			}
+			
+			/*----------------------------商品列表--------------------*/
+			#nav_hid{
+				width: 1000px;height: 400px;background: rgba(0,0,0,0.6);position: absolute;left: 0;right: 0;margin: auto;z-index: 999;top:100px;display: none;
+			}
+			#nav_hid .snav{
+				width: 90%;display: flex;justify-content: space-around;padding: 30px 0 54px 0;margin: 0 auto;
+			}
+			#nav_hid .snav div{
+				width: 70px;
+			}
+			#nav_hid .snav p{
+				color: white;font-size: 15px;margin: 0 0 10px;
+			}
+			#nav_hid .snav ul{
+				margin-top: 0;margin-bottom: 10px;
+			}
+			#nav_hid .snav a{
+				color: #bbb;font-size: 12px;
+			}
+			#nav_hid .snav a:hover{
+				color: white;font-size: 14px;
+			}
+			#nav_hid .snav .secondList{
+				margin-left: 5px;border-left: 1px solid #bbb;padding-left: 8px;
+			}
+			#nav_hid .firstList{
+				color: #eee;
+			}
+			
+			/*----------------------------购物车--------------------*/
+			#containerbox{
+				width: 100%;background: #25292e;
+			}
+			#cart{
+				width: 1000px;margin: 0 auto;color: #333;
+			}
+			#cart .shopping{
+				width: 100%;margin-top: 50px;text-align: center;
+			}
+			#cart .shopping span{
+				font-size: 16px;padding: 0 25px;color:cornflowerblue ;border-right: 1px solid #ccc;border-left:  1px solid #ccc;;
+			}
+			#cart .cartBar .allpro{
+				/*border-bottom:2px solid cornflowerblue;*/padding:0 5px;width: 104px;height: 50px;line-height: 50px;font-size: 20px;
+			}
+			#cart #allNum{
+				margin-left: 8px;
+			}
+			#cart .cartTab{
+				width: 100%;height: 42px;border-top: 2px solid #ccc;line-height: 42px;background: #ededed;
+			}
+			#cart .template{
+				width: 100%;height: 70px;line-height: 70px;border-bottom: 1px solid #ccc;
+			}
+			#cart .cartTab div,#cart .template div{
+				float: left;font-size: 14px;
+			}
+			#cart input{
+				margin: 0 10px;
+			}
+			#cart .checks{
+				width: 100px;padding-left: 20px;
+			}
+			#cart .product{
+				width: 200px;padding-left: 20px;
+			}
+			#cart .cartInner{
+				width: 160px;height: 42px;padding-left: 20px;
+			}
+			.price,.amount,.sum,.operate{
+				width: 100px;padding-left: 20px;
+			}
+			#cart .template .count{
+				width: 50px;height: 20px;border: 1px solid #cacbcb;margin: 0px;outline: none;padding: 3px 0;text-align: center;
+			}
+			#cart .minus,#cart .add {display: inline-block; width: 15px; text-align: center; border:1px solid #cacbcb; height:20px; line-height: 20px; cursor: default;padding-bottom: 3px;padding-top: 3px;background: #ededed;
+			}
+			
+			/*-------------------------结算部分--------------------------------------*/
+			
+			
+		</style>
+	</head>
+	<body>
+		<!----------------------------头部-------------------------------------------->
+		<div id="topbox">
+			<div id="headerbox">
+				<div id="header">
+					<h1></h1>
+					<div class="rtbox">
+						<p id="register"><a href="">登录</a></p>
+						<p id="login"><a href="">注册</a></p>
+						<ul>
+							<li><a href="">购物车</a></li>
+							<li><a href="">消息</a></li>
+							<li class="lastop"><a href="">添加良品</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+				
+			<!-------------------------nav-------------------------------------------->
+			<div id="nav">
+				<ul class="navigation">
+					<li class="firstl"><a href="">首页</a></li>
+					<li><a href="">商店</a></li>
+					<li><a href="">杂志</a></li>
+					<li><a href="">分享</a></li>
+					<li><a href="">达人</a></li>
+				</ul>
+				<!--------------------搜索-------------------------------------------->
+				<div id="search">
+					<input type="text" placeholder="search..." id="sousuo">
+					<div id="search_icon"></div>
+				</div>
+			</div>
+			
+			<!-------------------------全部商品列表-------------------------------------->
+			<div id="nav_hid">
+				<div class="snav">
+					<div><p>服饰</p>
+						<ul>
+							<li><a href="" class="firstList">女装</a>
+								<ul class="secondList">
+									<li><a href="">上衣</a></li>
+									<li><a href="">裙装</a></li>
+									<li><a href="">裤装</a></li>
+									<li><a href="">外套</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">男装</a>
+								<ul class="secondList">
+									<li><a href="">上衣</a></li>
+									<li><a href="">套装</a></li>
+									<li><a href="">裤装</a></li>
+									<li><a href="">外套</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">童装</a>
+								<ul class="secondList">
+									<li><a href="">婴儿服</a></li>
+									<li><a href="">幼儿服</a></li>
+									<li><a href="">学童服</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>鞋包</p>
+						<ul>
+							<li><a href="" class="firstList">女鞋</a></li>
+							<li><a href="" class="firstList">男鞋</a></li>
+							<li><a href="" class="firstList">包</a>
+								<ul class="secondList">
+									<li><a href="">双肩包</a></li>
+									<li><a href="">单肩包</a></li>
+									<li><a href="">手提包</a></li>
+									<li><a href="">钱包</a></li>
+									<li><a href="">手拿包</a></li>
+									<li><a href="">其他</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>配饰</p>
+						<ul>
+							<li><a href="">项链</a></li>
+							<li><a href="">手表</a></li>
+							<li><a href="">眼镜</a></li>
+							<li><a href="">帽子</a></li>
+							<li><a href="">袜子</a></li>
+							<li><a href="">手套</a></li>
+							<li><a href="">其他</a></li>
+						</ul>
+					</div>
+					<div><p>美护</p>
+						<ul>
+							<li><a href="" class="firstList">洗护</a>
+								<ul class="secondList">
+									<li><a href="">洗发护发</a></li>
+									<li><a href="">面膜面霜</a></li>
+									<li><a href="">唇部护理</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">专享</a>
+								<ul class="secondList">
+									<li><a href="">男士系列</a></li>
+									<li><a href="">婴儿系列</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>数码</p>
+						<ul>
+							<li><a href="" class="firstList">耳机</a>
+								<ul class="secondList">
+									<li><a href="">入耳式</a></li>
+									<li><a href="">线控</a></li>
+									<li><a href="">蓝牙耳机</a></li>
+									<li><a href="">头戴式</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">相机</a>
+								<ul class="secondList">
+									<li><a href="">拍立得</a></li>
+									<li><a href="">相机腕带</a></li>
+									<li><a href="">自拍器</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">手机配件</a>
+								<ul class="secondList">
+									<li><a href="">保护壳</a></li>
+									<li><a href="">保护膜</a></li>
+									<li><a href="">移动电源</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>美食</p>
+						<ul>
+							<li><a href="">果汁</a></li>
+							<li><a href="">巧克力</a></li>
+							<li><a href="">糖果糕点</a></li>
+							<li><a href="">咖啡茶饮</a></li>
+							<li><a href="">进口食品</a></li>
+							<li><a href="">美酒</a></li>
+						</ul>
+					</div>
+					<div><p>礼物</p>
+						<ul>
+							<li><a href="">送她</a></li>
+							<li><a href="">送他</a></li>
+							<li><a href="">送父母</a></li>
+							<li><a href="">送同事</a></li>
+							<li><a href="">送儿童</a></li>
+							<li><a href="">送闺蜜</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!----------------------------购物车------------------------------------------>
+		<div id="contentbox">
+			<div id="cart">
+				<div class="shopping"><span>购物车</span></div>
+				<div class="cartBar">
+					<div class="allpro">全部商品<span id="allNum">0</span></div>
+				</div>
+				<div class="cartTab">
+					<div class="checks"><label><input type="checkbox" class="ck_all">全选</label></div>
+					<div class="product">良品</div>
+					<div class="cartInner"> </div>
+					<div class="price">单价</div>
+					<div class="amount">数量</div>
+					<div class="sum">小计</div>
+					<div class="operate">操作</div>
+				</div>
+				
+				<!-- 购物车商品信息行的模板 -->
+				<div class="template" <!--style="display: none;-->">
+					<div class="checks"><input type="checkbox" class="ck_product"></div>
+					<div class="product">书</div>
+					<div class="cartInner"> </div>
+					<div class="price"><span>￥</span>99</div>
+					<div class="amount"><span class="minus">-</span><input type="text" class="count" value="1"><span class="add">+</span></div>
+					<div class="sum"><span>￥</span>198</div>
+					<div class="operate"><a href="">删除</a></div>
+				</div>
+				<div class="template" <!--style="display: none;-->">
+					<div class="checks"><input type="checkbox" class="ck_product"></div>
+					<div class="product">书</div>
+					<div class="cartInner"> </div>
+					<div class="price"><span>￥</span>99</div>
+					<div class="amount"><span class="minus">-</span><input type="text" class="count" value="1"><span class="add">+</span></div>
+					<div class="sum"><span>￥</span>198</div>
+					<div class="operate"><a href="">删除</a></div>
+				</div>
+				<div class="template" <!--style="display: none;-->">
+					<div class="checks"><input type="checkbox" class="ck_product"></div>
+					<div class="product">书</div>
+					<div class="cartInner"> </div>
+					<div class="price"><span>￥</span>99</div>
+					<div class="amount"><span class="minus">-</span><input type="text" class="count" value="1"><span class="add">+</span></div>
+					<div class="sum"><span>￥</span>198</div>
+					<div class="operate"><a href="">删除</a></div>
+				</div>
+			<div>
+			
+			<!----------------------商品结算--------------------------------------->
+			<div class="calcTotal">
+				<div class="checks"><label><input type="checkbox" class="ck_all">全选</label></div>
+				<div class="operate">删除选中的商品</div>
+				<div>移入收藏夹</div>
+				<div>分享</div>
+				<div>选择<span>2</span>件商品</div>
+				<div class="total">合计：</div>
+				<div><a href="">结算</a></div>
+			</div>
+		</div>
+	</body>
+</html>

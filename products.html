@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			li{
+				list-style: none;
+			}
+			img{
+				border: 0;
+			}
+			
+			/*-------------------顶部---------------------------*/
+			#topbox,#indexbox,#containerbox{
+				width: 100%;height:100%;clear: both;
+			}
+			#headerbox{
+				width: 100%;height: 56px;background: #25292e;
+			}
+			#header{
+				width: 1000px;margin: 0 auto;overflow: hidden;
+			}
+			#header h1{
+				width: 96px;height: 38px;margin-top: 10px;
+				float:left;background: url(img/icon.png) no-repeat ;
+			}
+			.rtbox{
+				width: 260px;height: 56px;float: right;font-size: 12px;
+			}
+			.rtbox p a{
+				line-height: 56px;color: #ccc;display: block;float: left;
+			}
+			#login a{
+				padding: 0 16px 0 8px;
+			}
+			.rtbox ul{
+				float: right;
+			}
+			.rtbox ul li{
+				float:left;background: url(img/bg1.png) no-repeat center left;line-height: 56px;
+			}
+			.rtbox ul li a{
+				color: #666;padding: 0 15px;
+			}
+			.rtbox ul li a:hover{
+				color: #ccc;
+			}
+			.lastop{
+				margin-right: -14px;
+			}
+			
+			/*-----------------------nav导航----------------------------------------*/
+			#nav{
+				width: 1000px;height: 46px;margin: 0 auto;border-bottom:4px solid #ededed;
+			}
+			.navigation{
+				width: 764px;line-height: 46px;font-size: 14px;float: left;
+			}
+			.navigation li a{
+				float: left;display: block;padding:0 50px;text-align: center;margin-right: 36px;color: black;
+			}
+			.navigation li a:hover{
+				border-bottom: 4px solid black;
+			}
+			.navigation .firstl a{
+				padding: 0 80px 0 0;margin-right: 0px;
+			}
+			
+			/*--------------------------搜索----------------------------*/
+			#search{
+				width: 236px;height: 46px;line-height: 45px;border-bottom: 4px solid #2529e;float: right;
+			}
+			#search #sousuo{
+				width: 190px;height: 46px;border: none;float: left;
+			}
+			#search_icon{
+				width: 46px;height: 46px;float: right;
+				background: url(img/icon.png) no-repeat  -166px -142px;
+			}
+			
+			/*----------------------------商品列表--------------------*/
+			#nav_hid{
+				width: 1000px;height: 400px;background: rgba(0,0,0,0.6);position: absolute;left: 0;right: 0;margin: auto;z-index: 999;top:100px;
+			}
+			#nav_hid .snav{
+				width: 90%;display: flex;justify-content: space-around;padding: 30px 0 54px 0;margin: 0 auto;
+			}
+			#nav_hid .snav div{
+				width: 70px;
+			}
+			#nav_hid .snav p{
+				color: white;font-size: 15px;margin: 0 0 10px;
+			}
+			#nav_hid .snav ul{
+				margin-top: 0;margin-bottom: 10px;
+			}
+			#nav_hid .snav a{
+				color: #bbb;font-size: 12px;
+			}
+			#nav_hid .snav a:hover{
+				color: white;font-size: 14px;
+			}
+			#nav_hid .snav .secondList{
+				margin-left: 5px;border-left: 1px solid #bbb;padding-left: 8px;
+			}
+			#nav_hid .firstList{
+				color: #eee;
+			}
+			
+			/*--------------------------商品索引导航-------------------------------------*/
+			.index{
+				width: 1000px;margin: 0 auto;height: 20px;background:white;line-height: 20px;vertical-align: middle;padding: 10px 0 5px 0;font-size: 12px;color: #bfbfbf;letter-spacing: 1px;
+			}
+			.index a{
+				color: #bfbfbf;
+			}
+			.index a:hover{
+				color: black;font-size: 14px;
+			}
+			
+			/*-------------------------商品详情--------------------------------------*/
+			#content{
+				width: 1000px;height: auto;margin: 0 auto;overflow: hidden;
+			}
+			
+			/*-------------------------右侧栏猜你喜欢---------------------------------*/
+			.aside{
+				width: 200px;height: 1310px;margin-right: 34px;float: right;
+			}
+			.aside .guess{
+				font-size: 14px;font-weight: bold;margin-left: 30px;
+			}
+			.aside .rightBox{
+				margin-top: 10px;
+			}
+			.aside .sbox{
+				width: 100%;height: 320px;margin-left: 30px;
+			}
+			.aside .sbox a{
+				display: block;width: 182px;height: 222px;
+			}
+			.aside .sbox .pic img{
+				display: block;width: 182px;height: 182px;box-shadow: 2px 2px 2px #ccc;
+			}
+			.aside .sbox p{
+				width: 100%;height: auto;font-size: 12px;line-height: 1.5;word-break: break-all;overflow: hidden;text-overflow: ellipsis;color: black;margin-top: 10px;
+			}
+			.aside .sbox .sname{
+				font-size: 12px;color: #BFBFBF;margin-top: 8px;
+			}
+			.aside .sbox .sprice{
+				font-size: 13px;color: #3193F3;margin-top: 6px;height: 24px;
+			}
+			
+			/*-------------------------------左半部分商品详情------------------------*/
+			.products{
+				width: 720px;height: 100%;float: left;
+			}
+			
+			/*-------------------------------商品图片放大镜--------------------------*/
+			.products .showLeft{
+				float: left;
+			}
+			.products .showLeft .bigImg{
+				width: 350px;height: 350px;overflow: hidden;position: relative;background: white;
+			}
+			.products .showLeft .bigImg ul li img{
+				width: 350px;height: 350px;position: absolute;left: 0;top: 0;
+			}
+			.products .showLeft .listBox{
+				width: 350px;height: 80px;position: relative;padding-top:15px ;overflow: hidden;
+			}
+			.products .showLeft .listBox li{
+				width: 66px;height: 66px;cursor: pointer;padding-top: 8px;margin: 0 2px;float: left;
+			}
+			.products .showLeft .listBox li img{
+				width: 63px;height: 63px;
+			}
+			
+			/*--------------------------------商品数量，价格----------------------------*/
+			.products .showRight{
+				float: right;width: 330px;height: auto;
+			}
+			.products .showRight #like{
+				background: url(img/xin.png) no-repeat 4px 4px;color: black;padding-left: 20px;background-size: 14px 13px;cursor: pointer;height: 20px;font-size: 13px;
+			}
+			.products .showRight .brand{
+				width: 330px;line-height: 36px;margin-top: 10px;font-size: 24px;line-height: 52px;
+			}
+			.products .showRight .brand a{
+				color: #878787;
+			}
+			.products .showRight .bname{  /*--------------商品名称---------------------*/
+				width: 330px;height: 52px;font-size: 20px;
+			}
+			.products .showRight .bprice{	/*--------------商品价格--------------*/
+				width: 300px;line-height: 18px;font-size: 12px;color:#878787;padding-bottom: 32px;padding-top: 5px;
+			}
+			.products .showRight .bprice span{
+				color: #3193F3;font-size: 18px;
+			}
+			.products .showRight .shopnote{	/*--------------免运费/正品--------------*/
+				width: 300px;padding-left: 44px;font-size: 12px;
+			}
+			.products .showRight .shopnote span{
+				padding-left: 18px;color: #BFBFBF;
+			}
+			.products .showRight .shopnote span:nth-of-type(1){
+				background: url(img/feiji.png) no-repeat 0px 1px;background-size: 14px 14px;
+			}
+			.products .showRight .shopnote span:nth-of-type(2){
+				background: url(img/dunpai.png) no-repeat 1px 1px;background-size: 14px 14px;
+			}
+			.products .showRight .num{	/*--------------商品剩余数量---------------*/
+				width: 330px;min-height: 50px;color: #BFBFBF;margin-top: 10px;font-size: 12px;height: auto;padding: 5px 0px;
+			}
+			.products .showRight .num .itemCon{
+				width: auto;height: 24px;display: inline-block;
+			}
+			.products .showRight .num .itemCon a{
+				height: 20px;line-height: 20px;display: inline-block;padding: 2px 10px;color: #BFBFBF;font-size: 13px;text-align: center;background: #dcdcdc;border: 1px solid black;
+			}
+			.products .showRight .amount{	/*--------------购买数量---------------*/
+				width: 330px;height: 24px;margin-top: 10px;padding-bottom: 10px;font-size: 12px;color: #BFBFBF;
+			}
+			.products .showRight .amount .mopt{
+				height: 32px;display: inline-block;font-size: 0;vertical-align: middle;
+			}
+			.products .showRight .amount .mopt a{
+				width: 13px;height: 13px;line-height: 13px;vertical-align: middle;color: black;text-align: center;font-size: 13px;display: inline-block;
+			}
+			.products .showRight .amount .mopt a:nth-of-type(1){
+				background: url(img/minus.png) no-repeat top left;background-size: 13px 13px;
+			}
+			.products .showRight .amount .mopt a:nth-of-type(2){
+				background: url(img/plus.png) no-repeat top left;background-size: 13px 13px;
+			}
+			.products .showRight .amount .mopt .inpt{
+				width: 52px;height: 24px;display: inline-block;margin: 0 7px;line-height: 24px;vertical-align: middle;font-size: 13px;text-align: center;border: 1px solid #ccc;background: white;outline: none;
+			}
+			.products .showRight .buyAll{	/*--------------立即购买----------------*/
+				margin-top: 5px;width: 330px;font-size: 20px;text-align: center;font-weight: 100;padding-top: 10px;
+			}
+			.products .showRight .buyAll #buynow{
+				display: inline-block;width: 330px;height: 42px;line-height: 42px;background: black;color: white;
+			}
+			.products .showRight .infoItem{	/*-----------加入购物车-----------------*/
+				width: 330px;font-size: 14px;padding: 10px 0px;line-height: 24px;color: #393433;vertical-align: middle;height: 36px;
+			}
+			.products .showRight .infoItem a{
+				display: inline-block;width: 160px;height: 32px;color: black;line-height: 32px;font-size: 13px;border: 1px solid black;text-align: center;
+			}
+			.products .showRight .infoItem span{
+				margin-left: 18px;color: black;
+			}
+			.products .showRight .infoItem .btn1{
+				background: url(img/gouwuche.png) no-repeat 36px 9px;float: left;background-size:15px;
+			}
+			.products .showRight .infoItem .btn2{
+				background: url(img/fenxiang.png) no-repeat 58px 7px;float: right;background-size:12px;
+			}
+			
+			/*---------------------------商品详情图片展示-------------------------------*/
+			.products .intro,article .intro .imgBox{
+				width: 720px;height: 100%;text-align: left;clear: both;
+			}
+			.products .intro .imgBox div{
+				margin-bottom: 20px;
+			}
+			.products .intro .imgBox div img{
+				width: 720px;height: 720px;display: block;box-shadow: 2px 2px 2px #ccc;
+			}
+			.products .intro .intro_div{
+				width: 100%;margin-top: 30px;font-size: 18px;color: black;
+			}
+			.products .intro .intro_div p{
+				margin-left: 25px;
+			}
+			.products .intro div:nth-of-type(2){
+				background: url(img/i1.png) no-repeat left center;background-size: 20px 20px;
+			}
+			.products .intro div:nth-of-type(4){
+				background: url(img/i2.png) no-repeat left center;background-size: 20px 20px;
+			}
+			.products .intro div:nth-of-type(6){
+				background: url(img/i3.png) no-repeat left center;background-size: 20px 20px;
+			}
+			.products .intro div:nth-of-type(8){
+				background: url(img/i4.png) no-repeat left center;background-size: 20px 20px;position: relative;
+			}
+			.products .intro .divName{
+				width: 718px;height: auto;margin-top: 20px;color: black;line-height: 2;word-break: break-all;overflow: hidden;text-overflow: ellipsis;font-size: 12px;
+			}
+			
+			/*----------------------购物指南-----------------------------------*/
+			.products .intro .navItem{
+				margin-top: 20px;color: black;font-size: 12px;
+			}
+			/*----------------------售后---------------------------------------*/
+			.products .intro .after_sale a{
+				display: block;
+			}
+			.products .intro .after_sale img{
+				width: 100px;height: 28px;
+			}
+			.products .intro .asintro{
+				width: 592px;height: auto;padding:24px 30px;border: 3px solid rgb(237,237,237);position: absolute;left: 0;bottom:40px;left:0;font-size: 12px;line-height: 2;background: white;top: 3000px;display: none;
+			}
+			.products .intro .asintro p{
+				margin-bottom: 24px;line-height: 1.6;letter-spacing: 1px;color: lightslategrey;
+			}
+			
+			/*-----------------------------图标more(以下为底部)-----------------------------*/
+			#more a{
+				display: block;width: 148px;height: 50px;margin: 90px auto 0;background: url(img/icon.png) no-repeat scroll 0px -640px;clear: both;
+			}
+			#more a:hover{
+				background: url(img/icon.png) no-repeat scroll 0px -688px
+			}
+			
+			/*----------------------------底部logo介绍------------------------------*/
+			#serviceBox{
+				width: 100%;text-align: center;clear: both;
+			}
+			#serviceBox .service{
+				width: 100%;padding: 51px 0 78px;border-top: 1px solid #ededed;background: #fbfdfe;margin: 90px auto 0;
+			}
+			#serviceBox .service .shop{
+				display: block;width: 208px;height: 16px;position: relative;margin: 0 auto;padding-left: 45px;background: url(img/icon.png) no-repeat 74px -416px;
+			}
+			#serviceBox .shop .hand{
+				width: 30px;height: 16px;position: absolute;top: 1px;background: url(img/icon.png) no-repeat  -173px -356px;overflow: hidden;
+			}
+			#serviceBox .service .sloge{
+				width: 1000px;margin: 0 auto;padding-top:42px ;overflow: hidden;
+			}
+			#serviceBox .service .sloge dl{
+				float: left;height: 60px;text-align: left;
+			}
+			#serviceBox .service .sloge dl dt{
+				width: 58px;height: 62px;
+			}
+			#serviceBox .service .sloge .pic1{
+				background: url(img/icon.png) no-repeat  2px -356px;float: left;
+			}
+			#serviceBox .service .sloge .pic2{
+				background: url(img/icon.png) no-repeat  -148px -218px;float: left;
+			}
+			#serviceBox .service .sloge .pic3{
+				background: url(img/icon.png) no-repeat  -56px -356px;float: left;
+			}
+			#serviceBox .service .sloge .pic4{
+				background: url(img/icon.png) no-repeat  -114px -356px;float: left;
+			}
+			#serviceBox .service .sloge dl dd{
+				width: 174px;padding: 10px 0 0 16px;letter-spacing: 1.2px;word-break: break-all;word-wrap: break-word;font-size: 12px;float: left;
+			}
+			#serviceBox .service .sloge .ch{
+				width: 100%;height: 24px;line-height: 24px;font-size: 14px;overflow: hidden;color: #737373;
+			}
+			#serviceBox .service .sloge .phone{
+				width: 117px;background: url(img/icon.png) no-repeat  0px -434px;
+			}
+			#serviceBox .service .sloge .en{
+				line-height: 22px;color: #ccc;
+			}
+			
+			/*-------------------------------底部公司介绍---------------------*/
+			#footbox{
+				width: 100%;background: #25292e;
+			}
+			#footer{
+				width: 1000px;margin: 0 auto;height: 222px;
+			}
+			#footer a{
+				color: #5c5c5c;
+			}
+			#footer .footLeft{
+				width: 800px;padding-top: 40px;float: left;
+			}
+			#footer .footLeft .down{
+				display: block;width: 196px;height: 44px;
+			}
+			#footer .footLeft .download{
+				width: 136px;height: 44px;padding-left: 60px;font-size: 14px;position: relative;
+			background: url(img/icon.png) no-repeat -174px 0px;
+			}
+			#footer .footLeft .download .iphone{
+				line-height: 18px;font-size: 14px;letter-spacing: 2px;
+			}
+			#footer .footLeft .download .clientdown{
+				margin-top: 7px;font-size: 14px;letter-spacing: 2px;
+			}
+			#footer .footLeft .download p:hover{ /*------------- 鼠标经过变色----------------*/
+				color:#999;
+			}
+			
+			/*-------------------------------客户端二维码------------------------*/
+			#footer .footLeft .downcode{
+				width: 260px;height: 187px;position: absolute;top:-187px;left:0px;/*display: none;*/
+			}
+			#footer .footLeft .downcode dl{
+				float: left;background: white;
+			}
+			#footer .footLeft .downcode dt{
+				width: 98px;height: 95px;
+			}
+			#footer .footLeft .downcode dd{
+				width: 98px;height: 52px;line-height: 52px;text-align: center;letter-spacing: 0;font-size: 12px;
+				color: #4d4d4d;
+			}
+			#footer .footLeft .downcode .Anrma{
+				padding-left: 20px;
+			}
+			#footer .footLeft .iphma dt{
+				border-right: 1px solid #d9d9d9;background: url(img/icon.png) no-repeat -100px -47px;padding-right: 20px;
+			}
+			#footer .footLeft .Anrma dt{
+				background: url(img/icon.png) no-repeat 0px -47px;
+			}
+			
+			/*-------------------------------公司地址--------------------------*/
+			#footer .footLeft .about{
+				font-size: 12px;letter-spacing: 3px;margin-top:30px ;height: 14px;margin-bottom: 8px;
+			}
+			#footer .footLeft .about li{
+				float: left;
+			}
+			#footer .footLeft .about li a{
+				display:block;height: 14px;padding: 0 8px 0 10px;border-left: 1px solid #5c5c5c;
+			}
+			#footer .footLeft .about .liFirst{
+				border-left: none;
+			}
+			#footer .footLeft p{
+				font-size: 12px;color: #5c5c5c;letter-spacing: 3px;
+			}
+			#footer .footLeft .about li a:hover{   /*-------------------- 鼠标经过变色----------------------*/
+				color:#bfbfbf;
+			}
+			
+			/*------------------------------微信登录方式(右半部分)----------------------*/
+			#footer .footRight{
+				width: 152px;height: 30px;padding-top: 45px;float: right;
+			}
+			#footer .footRight ul li a{
+				display: block;height: 20px;float: left;margin-left: 28px;position: relative;opacity: 0.2;
+			}
+			#footer .footRight ul .wechart{
+				width: 26px;background: url(img/icon.png) no-repeat  -100px -23px;
+			}
+			#footer .footRight ul .wechart_code{
+				width: 145px;height: 145px;background: url(img/icon.png) no-repeat  0px -146px;position: absolute;top: -190px;left: -60px;overflow: hidden;
+			}
+			#footer .footRight ul .sina{
+				width: 23px;background: url(img/icon.png) no-repeat  -150px -23px;
+			}
+			#footer .footRight ul .douban{
+				width: 18px;background: url(img/icon.png) no-repeat  -130px -23px;
+			}
+			#footer .footRight ul li a:hover{   /*-------------------- 鼠标经过变色----------------------*/
+				opacity: 1;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!----------------------------头部-------------------------------------------->
+		<div id="topbox">
+			<div id="headerbox">
+				<div id="header">
+					<h1></h1>
+					<div class="rtbox">
+						<p id="register"><a href="">登录</a></p>
+						<p id="login"><a href="">注册</a></p>
+						<ul>
+							<li><a href="">购物车</a></li>
+							<li><a href="">消息</a></li>
+							<li class="lastop"><a href="">添加良品</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+				
+			<!-------------------------nav-------------------------------------------->
+			<div id="nav">
+				<ul class="navigation">
+					<li class="firstl"><a href="">首页</a></li>
+					<li><a href="">商店</a></li>
+					<li><a href="">杂志</a></li>
+					<li><a href="">分享</a></li>
+					<li><a href="">达人</a></li>
+				</ul>
+				<!--------------------搜索-------------------------------------------->
+				<div id="search">
+					<input type="text" placeholder="search..." id="sousuo">
+					<div id="search_icon"></div>
+				</div>
+			</div>
+
+			<!-------------------------全部商品列表-------------------------------------->
+			<div id="nav_hid">
+				<div class="snav">
+					<div><p>服饰</p>
+						<ul>
+							<li><a href="" class="firstList">女装</a>
+								<ul class="secondList">
+									<li><a href="">上衣</a></li>
+									<li><a href="">裙装</a></li>
+									<li><a href="">裤装</a></li>
+									<li><a href="">外套</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">男装</a>
+								<ul class="secondList">
+									<li><a href="">上衣</a></li>
+									<li><a href="">套装</a></li>
+									<li><a href="">裤装</a></li>
+									<li><a href="">外套</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">童装</a>
+								<ul class="secondList">
+									<li><a href="">婴儿服</a></li>
+									<li><a href="">幼儿服</a></li>
+									<li><a href="">学童服</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>鞋包</p>
+						<ul>
+							<li><a href="" class="firstList">女鞋</a></li>
+							<li><a href="" class="firstList">男鞋</a></li>
+							<li><a href="" class="firstList">包</a>
+								<ul class="secondList">
+									<li><a href="">双肩包</a></li>
+									<li><a href="">单肩包</a></li>
+									<li><a href="">手提包</a></li>
+									<li><a href="">钱包</a></li>
+									<li><a href="">手拿包</a></li>
+									<li><a href="">其他</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>配饰</p>
+						<ul>
+							<li><a href="">项链</a></li>
+							<li><a href="">手表</a></li>
+							<li><a href="">眼镜</a></li>
+							<li><a href="">帽子</a></li>
+							<li><a href="">袜子</a></li>
+							<li><a href="">手套</a></li>
+							<li><a href="">其他</a></li>
+						</ul>
+					</div>
+					<div><p>美护</p>
+						<ul>
+							<li><a href="" class="firstList">洗护</a>
+								<ul class="secondList">
+									<li><a href="">洗发护发</a></li>
+									<li><a href="">面膜面霜</a></li>
+									<li><a href="">唇部护理</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">专享</a>
+								<ul class="secondList">
+									<li><a href="">男士系列</a></li>
+									<li><a href="">婴儿系列</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>数码</p>
+						<ul>
+							<li><a href="" class="firstList">耳机</a>
+								<ul class="secondList">
+									<li><a href="">入耳式</a></li>
+									<li><a href="">线控</a></li>
+									<li><a href="">蓝牙耳机</a></li>
+									<li><a href="">头戴式</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">相机</a>
+								<ul class="secondList">
+									<li><a href="">拍立得</a></li>
+									<li><a href="">相机腕带</a></li>
+									<li><a href="">自拍器</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="firstList">手机配件</a>
+								<ul class="secondList">
+									<li><a href="">保护壳</a></li>
+									<li><a href="">保护膜</a></li>
+									<li><a href="">移动电源</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div><p>美食</p>
+						<ul>
+							<li><a href="">果汁</a></li>
+							<li><a href="">巧克力</a></li>
+							<li><a href="">糖果糕点</a></li>
+							<li><a href="">咖啡茶饮</a></li>
+							<li><a href="">进口食品</a></li>
+							<li><a href="">美酒</a></li>
+						</ul>
+					</div>
+					<div><p>礼物</p>
+						<ul>
+							<li><a href="">送她</a></li>
+							<li><a href="">送他</a></li>
+							<li><a href="">送父母</a></li>
+							<li><a href="">送同事</a></li>
+							<li><a href="">送儿童</a></li>
+							<li><a href="">送闺蜜</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<!-----------------------------商品导航--------------------------------------->
+		<div id="indexbox">
+			<div class="index">
+				<a href="">良仓</a>>
+				<a href="">玩具</a>>
+				Forest Friends (森林动物)
+			</div>
+		</div>
+		<!-----------------------------商品详情--------------------------------------->
+		<div id="containerbox">
+			<div id="content">
+				<!-----------------------------右侧栏（猜你喜欢）---------------------->
+				<div class="aside">
+					<div class="guess">猜你喜欢</div>
+					<div class="rightBox">
+						<div class="sbox">
+							<a href="">
+								<div class="pic">
+									<img src="img/c15.jpg">
+								</div>
+								<p>英国Luckies软木留言板世界地图|记录下人生路途</p>
+							</a>
+							<div class="sname">Luckies</div>
+							<div class="sprice">￥294.00</div>
+						</div>
+						<div class="sbox">
+							<a href="">
+								<div class="pic">
+									<img src="img/c15.jpg">
+								</div>
+								<p>英国Luckies软木留言板世界地图|记录下人生路途</p>
+							</a>
+							<div class="sname">Luckies</div>
+							<div class="sprice">￥294.00</div>
+						</div>
+						<div class="sbox">
+							<a href="">
+								<div class="pic">
+									<img src="img/c15.jpg">
+								</div>
+								<p>英国Luckies软木留言板世界地图|记录下人生路途</p>
+							</a>
+							<div class="sname">Luckies</div>
+							<div class="sprice">￥294.00</div>
+						</div>
+					</div>
+				</div>
+				<div class="products">
+					<!---------------商品图片（放大镜）----------------------------->
+					<div class="showLeft">
+						<div class="bigImg">
+							<ul>
+								<li><img src="img/t41.jpg"></li>
+							</ul>
+						</div>
+						<div class="listBox">
+							<ul>
+								<li><img src="img/t41.jpg"></li>
+								<li><img src="img/t42.jpg"></li>
+								<li><img src="img/t43.jpg"></li>
+							</ul>
+						</div>
+					</div>
+					<!----------------商品价格，数量-------------------------------->
+					<div class="showRight">
+						<div id="like">167</div>
+						<div class="brand"><a href="">Studio ROOF</a></div>
+						<div class="bname">Forest Friends (森林动物)</div>
+						<div class="bprice">价格：<span>￥180.00元</span></div>
+						<div class="shopnote">
+							<span>免运费</span>
+							<span>正品授权</span>
+						</div>
+						<div class="num">
+							数量：
+							<div class="itemCon">
+								<a href="">套装</a>
+							</div>
+						</div>
+						<div class="amount">
+							数量：
+							<div class="mopt">
+								<a href=""></a>
+								<input type="text" class="inpt" value="1">
+								<a href=""></a>
+							</div>
+						</div>
+						<div class="buyAll">
+							<a id="buynow" href="">立即购买</a>
+							<p id="buyover" style="display: none;">已售罄，即将到货</p>
+						</div>
+						<div class="infoItem">
+							<a href="" class="btn1"><span>加入购物车</span></a>
+							<a href="" class="btn2"><span>分享</span></a>
+						</div>
+					</div>
+					<!-------------------商品详情图片展示---------------------------->
+					<div class="intro">
+						<div class="imgBox">
+							<div><img src="img/t41.jpg"></div>
+							<div><img src="img/t42.jpg"></div>
+							<div><img src="img/t43.jpg"></div>
+						</div>
+						<!----------------------商品介绍---------------------------->
+						<div class="intro_div">
+							<p>良仓推荐</p>
+						</div>	
+						<div class="divName">
+							<p>谁说不同类别的动物就不能和平共处？ 在我们这组图腾《森林动物》组合里面， 无论是温顺的食草类动物梅花鹿，还是帅气的灰狼，还是天空老大老鹰 ，都能在这里快乐地成为好朋友。组合难度3颗星。
+							</p>
+						</div>
+						<div class="intro_div">
+							<p>品牌简介</p>
+						</div>	
+						<div class="divName">
+							<p>"简约却不失独特，典雅的生活尽在独特的细节。" 有一种艺术叫纸质艺术，有一种生活叫简约雅致 来自荷兰的Studio ROOF，以"纸"为素材，将简单的平面纸板拉高至立体的层次，徜徉的思维流淌在纸质的图腾艺术美之间。
+							</p>
+						</div>
+						<div class="intro_div">
+							<p>商品描述</p>
+						</div>	
+						<div class="divName">
+							<p>
+							12x6  cm/一只动物<br>
+							质地：硬纸板<br>
+							产地：中国 
+							</p>
+						</div>
+						<!------------------购物指南----------------------------------->
+						<div class="intro_div">
+							<p>购物指南</p>
+						</div>
+						<div class="navItem">
+							<p>- 所有商品均为正品保证。 </p>
+							<br>
+							<p>- 中国大陆地区免运费，默认商家合作快递。 </p>
+							<br>
+							<p>- 蜡烛、液态品、手表等含电池产品无法空运，运输时间相较普通空运件会更久。 </p>
+							<br>
+							<p>- 如出现产品质量问题请在签收后72小时内联系客服。 </p>
+							<br>
+						</div>
+						<!-------------------售后-------------------------------------->
+						<div class="after_sale">
+							<a href=""><img src="img/shouhou.png"></a>
+						</div>
+						<!-------------------售后详情----------------------------------->
+						<div class="asintro">
+							<p>质量><br>
+                			您收到的商品本身如有破损、瑕疵，我们将视为质量问题，因拍摄图片或显示器色差导致的色彩差异问题不属于质量问题。因产品尺码为手工测量，可能存在些许误差，敬请谅解。</p>
+							<p>售后><br>
+                			1、无质量问题的商品及良仓打折的商品，恕不予退换货；
+                			<br>
+                			2、退货说明：良仓承诺商品本身有质量问题时，在商品及吊牌、内包装完整无破损的情况下，您可以办理退货。在快递被签收后72小时内私信客服，并将破损问题拍照上传给客服，并在得到客服退货确认之日起3日内将商品寄出，同时请将快递公司和单号告知客服，由良仓承担来回运费，货款将在良仓收到货物后5个工作日内打到您的付款账户中；
+                			<br>
+                			3、换货说明：良仓恕不接受出于个人主观喜好原因的换货；如果您收到的服饰配件类商品尺码不合适，良仓愿意为您提供换货，请私信客服办理换货手续。请在快递签收之日起3日内将商品寄出，并将快递公司和单号告知客服，由于尺码不合等原因造成的往返换货费用将由购买客户承担。</p>
+                			<p>联系客服> <br>
+                			客服热线：400-897-6336<br>
+                			客服在线时间：工作日 09:00-18:00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!------------------------------图标more--------------------------->
+		<div id="more"><a href=""></a></div>
+		
+		<!-------------------------------底部服务logo介绍------------------------>
+		<div id="serviceBox">
+			<div class="service">
+				<a href="" class="shop">
+					<p class="hand"></p>
+				</a>
+				<div class="sloge">
+					<dl>
+						<dt class="pic1"></dt>
+						<dd>
+							<p class="ch">全球精品</p>
+							<p class="en">Global Selections</p>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="pic2"></dt>
+						<dd>
+							<p class="ch">正品保证</p>
+							<p class="en">Authenticity Guaranteed</p>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="pic3"></dt>
+						<dd>
+							<p class="ch">全场包邮</p>
+							<p class="en">Free Delivery</p>
+						</dd>
+					</dl>
+					<dl>
+						<dt class="pic4"></dt>
+						<dd>
+							<p class="ch phone"></p>
+							<p class="en">工作日 09:00-18:00</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+		<!-----------------------------------底部公司详情----------------------------->
+		<div id="footbox">
+			<div id="footer">
+				<div class="footLeft">
+					<a href="" class="down">
+						<div class="download">
+							<p class="iphone">iphone Andriod</p>
+							<p class="clientdown">客户端下载</p>
+							<div class="downcode">
+								<dl class="iphma">
+									<dt></dt>
+									<dd>下载iPhone版</dd>
+								</dl>
+								<dl class="Anrma">
+									<dt></dt>
+									<dd>下载Andriod版</dd>
+								</dl>
+							</div>
+						</div>
+					</a>
+					<ul class="about">
+						<li><a href="" class="liFirst">关于良仓</a></li>
+						<li><a href="">服务协议</a></li>
+						<li><a href="">隐私保护政策</a></li>
+						<li><a href="">使用指南</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">加入我们</a></li>
+						<li><a href="">友情链接</a></li>
+						<li><a href="">私信良仓</a></li>
+					</ul>
+					<p>©2013-2015 北京良仓文化传播有限公司版权所有 京ICP备13010677号-1 京公网安备11010502025627</p>
+					<p>公司名称：北京良仓文化传播有限公司  电话：010-58263516</p>
+					<p>公司地址：北京朝阳区百子湾路32号6号楼1层60号.</p>
+					<p>社会信用统一代码：91110105059231575L  食品许可证：JY11105160159557  </p>
+					<p>图书证名称：中华人民共和国出版物经营许可证  图书证编号：新出发京零 字第 朝 150051 号  </p>
+				</div>
+				
+				<!---------------------------------微信图标登录---------------------->
+				<div class="footRight">
+					<ul>
+						<li>
+							<a href="" class="wechart">
+								<div class="wechart_code"></div>
+							</a>
+						</li>
+						<li><a href="" class="sina"></a></li>
+						<li><a href="" class="douban"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
