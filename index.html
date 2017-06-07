@@ -181,15 +181,22 @@
 			<!-----------------------商品展示------------------------------------->
 			<div id="content">
 				<!--------------------今日新品----------------------------------->
-				<div class="newpro">
+				<div class="newpro floor">
 					<h3>[&nbsp;&nbsp;<span>今日新品</span>&nbsp;&nbsp;]</h3>
 					<div class="leftbox">
 						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
+							<div class="divImg">
+								<img src="img/cont1.jpg">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span>欧洲进口   家居生活馆</span></p>
+								<p class="two"><span>2</span>折起</p>
+							</div>
 						</div>
 						<div class="goods">
-							<img>
+							<div class="divImg">
+								<img src="img/cont1.jpg">
+							</div>
 							<p class="title_goods"></p>
 						</div>
 						<div class="goods">
@@ -201,32 +208,17 @@
 							<p class="title_goods"></p>
 						</div>
 					</div>
-					<div class="slunbobox"></div>
+					<!---------------------小轮播图--------------------------->
+					<div class="slunbobox" id="scroll">
+						<dl>
+							<dt><img src="img/sc1.jpg"></dt>
+							<dd><img src="img/sc2.jpg"></dd>
+						</dl>
+						<div id="pages"></div>
+						<div id="prev"></div>
+						<div id="next"></div>
+					</div>
 					<div class="bottombox">
-						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<img>
-							<p class="title_goods"></p>
-						</div>
 						<div class="goods">
 							<img>
 							<p class="title_goods"></p>
@@ -291,7 +283,7 @@
 				</div>
 				
 				<!--------------------热卖品牌----------------------------------->
-				<div class="hotpro">
+				<div class="hotpro floor">
 					<h3>[&nbsp;&nbsp;<span>热卖品牌</span>&nbsp;&nbsp;]</h3>
 					<div class="goods">
 						<img>
@@ -332,9 +324,26 @@
 				</div>
 			
 				<!--------------------女式活动----------------------------------->
-				<div class="women">
+				<div class="women floor">
 					<h3>[&nbsp;&nbsp;<span>女式活动</span>&nbsp;&nbsp;]</h3>
-					<div class="slunbobox"></div>
+					<div class="slunbobox">
+						<div class="silo wmsilo">
+							<div class="silobox">
+								<h4 class="icon1"></h4>
+								<div class="catBox">
+									<div class="siloCat">
+										<a href="">服装</a>
+										<a href="">鞋履</a>
+										<a href="">包袋</a>
+										<a href="">手表&首饰</a>
+										<a href="">配饰</a>
+										<a href="">眼镜</a>
+									</div>
+								<a href="" class="view_more">查看更多  ></a>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="leftbox">
 						<div class="goods">
 							<img>
@@ -383,9 +392,25 @@
 				</div>
 				
 				<!--------------------男式活动----------------------------------->
-				<div class="men">
+				<div class="men floor">
 					<h3>[&nbsp;&nbsp;<span>男式活动</span>&nbsp;&nbsp;]</h3>
-					<div class="slunbobox"></div>
+					<div class="slunbobox">
+						<div class="silo mensilo">
+							<div class="silobox">
+								<h4 class="icon2"></h4>
+								<div class="catBox">
+									<div class="siloCat">
+										<a href="">包袋钱包</a>
+										<a href="">服装</a>
+										<a href="">鞋履</a>
+										<a href="">配饰</a>
+										<a href="">眼镜</a>
+									</div>
+								<a href="" class="view_more">查看更多  ></a>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="leftbox">
 						<div class="goods">
 							<img>
@@ -422,9 +447,29 @@
 				</div>
 				
 				<!--------------------美妆活动----------------------------------->
-				<div class="make">
+				<div class="make floor">
 					<h3>[&nbsp;&nbsp;<span>美妆活动</span>&nbsp;&nbsp;]</h3>
-					<div class="slunbobox"></div>
+					<div class="slunbobox">
+						<div class="silo makesilo">
+							<div class="silobox">
+								<h4 class="icon3"></h4>
+								<div class="catBox">
+									<div class="siloCat">
+										<a href="">护肤</a>
+										<a href="">彩妆</a>
+										<a href="">香氛</a>
+										<a href="">美体</a>
+										<a href="">男士</a>
+										<a href="">保健</a>
+										<a href="">面膜</a>
+										<a href="">美容仪</a>
+										<a href="">美发</a>
+									</div>
+								<a href="" class="view_more">查看更多  ></a>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="leftbox">
 						<div class="goods">
 							<img>
@@ -461,9 +506,28 @@
 				</div>
 				
 				<!--------------------家居活动----------------------------------->
-				<div class="home">
+				<div class="home floor">
 					<h3>[&nbsp;&nbsp;<span>家居活动</span>&nbsp;&nbsp;]</h3>
-					<div class="slunbobox"></div>
+					<div class="slunbobox">
+						<div class="silo homesilo">
+							<div class="silobox">
+								<h4 class="icon4"></h4>
+								<div class="catBox">
+									<div class="siloCat">
+										<a href="">床品</a>
+										<a href="">卫浴</a>
+										<a href="">厨具</a>
+										<a href="">摆件</a>
+										<a href="">食品</a>
+										<a href="">家电</a>
+										<a href="">旅游</a>
+										<a href="">3C数码产品</a>
+									</div>
+								<a href="" class="view_more">查看更多  ></a>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="leftbox">
 						<div class="goods">
 							<img>
@@ -486,9 +550,24 @@
 				</div>
 				
 				<!--------------------婴童活动----------------------------------->
-				<div class="baby">
+				<div class="baby floor">
 					<h3>[&nbsp;&nbsp;<span>婴童活动</span>&nbsp;&nbsp;]</h3>
-					<div class="slunbobox"></div>
+					<div class="slunbobox">
+						<div class="silo babysilo">
+							<div class="silobox">
+								<h4 class="icon5"></h4>
+								<div class="catBox">
+									<div class="siloCat">
+										<a href="">服装</a>
+										<a href="">玩具</a>
+										<a href="">母婴</a>
+										<a href="">配饰</a>
+									</div>
+								<a href="" class="view_more">查看更多  ></a>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="leftbox">
 						<div class="goods">
 							<img>
@@ -511,9 +590,15 @@
 				</div>
 				
 				<!--------------------海外活动----------------------------------->
-				<div class="abroad">
+				<div class="abroad floor">
 					<h3>[&nbsp;&nbsp;<span>海外活动</span>&nbsp;&nbsp;]</h3>
-					<div class="slunbobox"></div>
+					<div class="slunbobox">
+						<div class="silo abroadsilo">
+							<div class="silobox">
+								<h4 class="icon6"></h4>
+							</div>
+						</div>
+					</div>
 					<div class="leftbox">
 						<div class="goods">
 							<img>
@@ -535,20 +620,204 @@
 					<a href="" class="goodsmore">查看更多</a>
 				</div>
 				
-			</div>
-			
-			<!------------------------打折广告---------------------------------------->
-			<div class="sale">
-				<h2>打折促销</h2>
-				<div class="shoufengqinBox">
-					<div class="sfq im1"><a href=""><img src="img/a1.jpg"></a></div>
-					<div class="sfq im2"><a href=""><img src="img/a2.jpg"></a></div>
-					<div class="sfq im3"><a href=""><img src="img/1.jpg"></a></div>
-					<div class="sfq im4"><a href=""><img src="img/2.jpg"></a></div>
-					<div class="sfq im5"><a href=""><img src="img/a4.jpg"></a></div>
-					<div class="sfq im6"><a href=""><img src="img/a5.jpg"></a></div>
+				<!--------------------活动即将开始----------------------------------->
+				<div class="active floor">
+					<h3>[&nbsp;&nbsp;<span>活动即将开始</span>&nbsp;&nbsp;]</h3>
+					<div class="activeTime">
+						<div class="div1">
+							<span class="actWeek">今天</span>
+							<span class="actWeek">明天</span>
+							<span class="actWeek">周五</span>
+							<span class="actWeek">周六</span>
+							<span class="actWeek">周日</span>
+						</div>
+						<div class="slider"></div>
+						<div class="div2">早上<span>9</span>点上新</div>
+					</div>
+					<div class="activeContent">
+						<!--<div class="div2">早上<span>9</span>点上新</div>-->
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+							<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+						<div class="theActive">
+							<div class="activeCover"></div>
+							<div class="coverBtn"><a href="">预览</a></div>
+							<div class="activeImg">
+								<img src="img/ac1.jpg">
+							</div>
+							<div class="activeExplain">
+								<p class="exIntro">KOH GEN DO 彩妆博主强力种草</p>
+								<p class="red"><span>5</span>折起</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--------------打折广告---------------------------------->
+				<div class="sale floor">
+					<h3>[&nbsp;&nbsp;<span>热卖打折</span>&nbsp;&nbsp;]</h3>
+					<div class="shoufengqinBox">
+						<div class="sfq im1"><a href=""><img src="img/a1.jpg"></a></div>
+						<div class="sfq im2"><a href=""><img src="img/a2.jpg"></a></div>
+						<div class="sfq im3"><a href=""><img src="img/1.jpg"></a></div>
+						<div class="sfq im4"><a href=""><img src="img/2.jpg"></a></div>
+						<div class="sfq im5"><a href=""><img src="img/a4.jpg"></a></div>
+						<div class="sfq im6"><a href=""><img src="img/a5.jpg"></a></div>
+					</div>
 				</div>
 			</div>
+			
 		</div>
 		
 		<!------------------------------图标more--------------------------->
@@ -647,5 +916,20 @@
 		</div>
 		<!----------------------------------------点击购物车弹出蒙板和登录-------------->
 		<div id="cover"></div>
+		
+		<!-------------------------楼层导航--------------------------------->
+		<ul id="menu">
+			<li>1L<span style="display: block;">今日上新</span></li>
+			<li>2L<span>热卖品牌</span></li>
+			<li>3L<span>女式活动</span></li>
+			<li>4L<span>男式活动</span></li>
+			<li>5L<span>美妆活动</span></li>
+			<li>6L<span>家居活动</span></li>
+			<li>7L<span>婴童活动</span></li>
+			<li>8L<span>海外活动</span></li>
+			<li>9L<span  style="display: block;">活动即将开始</span></li>
+			<li>10L<span>打折活动</span></li>
+			<li>顶部</li>
+		</ul>
 	</body>
 </html>
