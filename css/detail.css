@@ -1,0 +1,410 @@
+*{
+	margin: 0;padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+img{
+	border: 0;
+}
+
+/*--------------------------商品索引导航-------------------------------------*/
+.index{
+	width: 1000px;
+	margin: 0 auto;
+	height: 20px;
+	background:white;
+	line-height: 20px;
+	vertical-align: middle;
+	padding: 10px 0 5px 0;
+	font-size: 12px;
+	color: #bfbfbf;
+	letter-spacing: 1px;
+}
+.index a{
+	color: #bfbfbf;
+}
+.index a:hover{
+	color: black;
+	font-size: 14px;
+}
+
+/*-------------------------商品详情--------------------------------------*/
+#content{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/*-------------------------右侧栏猜你喜欢---------------------------------*/
+.aside{
+	width: 200px;
+	height: 1310px;
+	margin-right: 34px;
+	float: right;
+}
+.aside .guess{
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 30px;
+}
+.aside .rightBox{
+	margin-top: 10px;
+}
+.aside .sbox{
+	width: 100%;
+	height: 320px;
+	margin-left: 30px;
+}
+.aside .sbox a{
+	display: block;
+	width: 182px;
+	height: 222px;
+}
+.aside .sbox .pic img{
+	display: block;
+	width: 182px;
+	height: 182px;
+	box-shadow: 2px 2px 2px #ccc;
+}
+.aside .sbox p{
+	width: 100%;
+	height: auto;
+	font-size: 12px;
+	line-height: 1.5;
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: black;
+	margin-top: 10px;
+}
+.aside .sbox .sname{
+	font-size: 12px;
+	color: #BFBFBF;
+	margin-top: 8px;
+}
+.aside .sbox .sprice{
+	font-size: 13px;
+	color: #3193F3;
+	margin-top: 6px;
+	height: 24px;
+}
+
+/*-------------------------------左半部分商品详情------------------------*/
+.products{
+	width: 720px;
+	height: 100%;
+	float: left;
+}
+
+/*-------------------------------商品图片放大镜--------------------------*/
+.products .showLeft{
+	float: left;
+}
+.products .showLeft .bigImg{
+	width: 350px;
+	height: 350px;
+	overflow: hidden;
+	position: relative;
+	background: white;
+}
+.products .showLeft .bigImg ul li img{
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.products .showLeft .listBox{
+	width: 350px;
+	height: 80px;
+	position: relative;
+	padding-top:15px ;
+	overflow: hidden;
+}
+.products .showLeft .listBox li{
+	width: 66px;
+	height: 66px;
+	cursor: pointer;
+	padding-top: 8px;
+	margin: 0 2px;
+	float: left;
+}
+.products .showLeft .listBox li img{
+	width: 63px;
+	height: 63px;
+}
+
+/*--------------------------------商品数量，价格----------------------------*/
+.products .showRight{
+	float: right;
+	width: 330px;
+	height: auto;
+}
+.products .showRight #like{
+	background: url(../img/xin.png) no-repeat 4px 4px;
+	color: black;
+	padding-left: 20px;
+	background-size: 14px 13px;
+	cursor: pointer;
+	height: 20px;
+	font-size: 13px;
+}
+.products .showRight .brand{
+	width: 330px;
+	line-height: 36px;
+	margin-top: 10px;
+	font-size: 24px;
+	line-height: 52px;
+}
+.products .showRight .brand a{
+	color: #878787;
+}
+.products .showRight .bname{  /*--------------商品名称---------------------*/
+	width: 330px;
+	height: 52px;
+	font-size: 20px;
+}
+.products .showRight .bprice{	/*--------------商品价格--------------*/
+	width: 300px;
+	line-height: 18px;
+	font-size: 12px;
+	color:#878787;
+	padding-bottom: 32px;
+	padding-top: 5px;
+}
+.products .showRight .bprice span{
+	color: #3193F3;
+	font-size: 18px;
+}
+.products .showRight .shopnote{	/*--------------免运费/正品--------------*/
+	width: 300px;
+	padding-left: 44px;
+	font-size: 12px;
+}
+.products .showRight .shopnote span{
+	padding-left: 18px;
+	color: #BFBFBF;
+}
+.products .showRight .shopnote span:nth-of-type(1){
+	background: url(../img/feiji.png) no-repeat 0px 1px;
+	background-size: 14px 14px;
+}
+.products .showRight .shopnote span:nth-of-type(2){
+	background: url(../img/dunpai.png) no-repeat 1px 1px;
+	background-size: 14px 14px;
+}
+.products .showRight .num{	/*--------------商品剩余数量---------------*/
+	width: 330px;
+	min-height: 50px;
+	color: #BFBFBF;
+	margin-top: 10px;
+	font-size: 12px;
+	height: auto;
+	padding: 5px 0px;
+}
+.products .showRight .num .itemCon{
+	width: auto;
+	height: 24px;
+	display: inline-block;
+}
+.products .showRight .num .itemCon a{
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	padding: 2px 10px;
+	color: #BFBFBF;
+	font-size: 13px;
+	text-align: center;
+	background: #dcdcdc;
+	border: 1px solid black;
+}
+.products .showRight .amount{	/*--------------购买数量---------------*/
+	width: 330px;
+	height: 24px;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	font-size: 12px;
+	color: #BFBFBF;
+}
+.products .showRight .amount .mopt{
+	height: 32px;
+	display: inline-block;
+	font-size: 0;
+	vertical-align: middle;
+}
+.products .showRight .amount .mopt a{
+	width: 13px;
+	height: 13px;
+	line-height: 13px;
+	vertical-align: middle;
+	color: black;
+	text-align: center;
+	font-size: 13px;
+	display: inline-block;
+}
+.products .showRight .amount .mopt a:nth-of-type(1){
+	background: url(../img/minus.png) no-repeat top left;
+	background-size: 13px 13px;
+}
+.products .showRight .amount .mopt a:nth-of-type(2){
+	background: url(../img/plus.png) no-repeat top left;
+	background-size: 13px 13px;
+}
+.products .showRight .amount .mopt .inpt{
+	width: 52px;
+	height: 24px;
+	display: inline-block;
+	margin: 0 7px;
+	line-height: 24px;
+	vertical-align: middle;
+	font-size: 13px;
+	text-align: center;
+	border: 1px solid #ccc;
+	background: white;
+	outline: none;
+}
+.products .showRight .buyAll{	/*--------------立即购买----------------*/
+	margin-top: 5px;
+	width: 330px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 100;
+	padding-top: 10px;
+}
+.products .showRight .buyAll #buynow{
+	display: inline-block;
+	width: 330px;
+	height: 42px;
+	line-height: 42px;
+	background: black;
+	color: white;
+}
+.products .showRight .infoItem{	/*-----------加入购物车-----------------*/
+	width: 330px;
+	font-size: 14px;
+	padding: 10px 0px;
+	line-height: 24px;
+	color: #393433;
+	vertical-align: middle;
+	height: 36px;
+}
+.products .showRight .infoItem a{
+	display: inline-block;
+	width: 160px;
+	height: 32px;
+	color: black;
+	line-height: 32px;
+	font-size: 13px;
+	border: 1px solid black;
+	text-align: center;
+}
+.products .showRight .infoItem span{
+	margin-left: 18px;
+	color: black;
+}
+.products .showRight .infoItem .btn1{
+	background: url(../img/gouwuche.png) no-repeat 36px 9px;
+	float: left;
+	background-size:15px;
+}
+.products .showRight .infoItem .btn2{
+	background: url(../img/fenxiang.png) no-repeat 58px 7px;
+	float: right;
+	background-size:12px;
+}
+
+/*---------------------------商品详情图片展示-------------------------------*/
+.products .intro,article .intro .imgBox{
+	width: 720px;
+	height: 100%;
+	text-align: left;
+	clear: both;
+}
+.products .intro .imgBox div{
+	margin-bottom: 20px;
+}
+.products .intro .imgBox div img{
+	width: 720px;
+	height: 720px;
+	display: block;
+	box-shadow: 2px 2px 2px #ccc;
+}
+.products .intro .intro_div{
+	width: 100%;
+	margin-top: 30px;
+	font-size: 18px;
+	color: black;
+}
+.products .intro .intro_div p{
+	margin-left: 25px;
+}
+.products .intro div:nth-of-type(2){
+	background: url(../img/i1.png) no-repeat left center;
+	background-size: 20px 20px;
+}
+.products .intro div:nth-of-type(4){
+	background: url(../img/i2.png) no-repeat left center;
+	background-size: 20px 20px;
+}
+.products .intro div:nth-of-type(6){
+	background: url(../img/i3.png) no-repeat left center;
+	background-size: 20px 20px;
+}
+.products .intro div:nth-of-type(8){
+	background: url(../img/i4.png) no-repeat left center;
+	background-size: 20px 20px;
+	position: relative;
+}
+.products .intro .divName{
+	width: 718px;
+	height: auto;
+	margin-top: 20px;
+	color: black;
+	line-height: 2;
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+}
+
+/*----------------------购物指南-----------------------------------*/
+.products .intro .navItem{
+	margin-top: 20px;
+	color: black;
+	font-size: 12px;
+}
+/*----------------------售后---------------------------------------*/
+.products .intro .after_sale a{
+	display: block;
+}
+.products .intro .after_sale img{
+	width: 100px;
+	height: 28px;
+}
+.products .intro .asintro{
+	width: 592px;
+	height: auto;
+	padding:24px 30px;
+	border: 3px solid rgb(237,237,237);
+	position: absolute;
+	left: 0;
+	bottom:40px;
+	left:0;
+	font-size: 12px;
+	line-height: 2;
+	background: white;
+	top: 3000px;
+	display: none;
+}
+.products .intro .asintro p{
+	margin-bottom: 24px;
+	line-height: 1.6;
+	letter-spacing: 1px;
+	color: lightslategrey;
+}
+

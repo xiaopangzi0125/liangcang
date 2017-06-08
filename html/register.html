@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css">
+	</head>
+	<body>
+		<div id="cover"></div>
+		<form id="main">
+			<div id="header">
+				<a href=""><img src="../img/logo2.png"></a>
+			</div>
+			<div id="section">
+				<div id="article">
+					<dl>
+						<dt>手机号</dt>
+						<dd><input type="text" placeholder="请输入手机号" id="phone"></dd>
+					</dl>
+					<dl>
+						<dt>验证码</dt>
+						<dd><input type="text" placeholder="输入验证码" id="code"></dd>
+						<dd id="scode"><img src="../img/code.png"></dd>
+						<dd><a href="" class="see">看不清，换一张</a></dd>
+					</dl>
+					<dl>
+						<dt>创建密码</dt>
+						<dd><input type="password" placeholder="6-20位字符组成，区分大小写" id="password"></dd>
+						<dd id="pwdinfo">
+							<div id="pwdbox"></div>
+							<div class="info">
+								<span>弱</span>
+								<span>中</span>
+								<span>强</span>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>密码确认</dt>
+						<dd><input type="password" placeholder="确认密码" id="sure"></dd>
+					</dl>
+				</div>
+				<div id="aside">
+					<input type="checkbox" checked="checked">同意<a href="">良仓注册条款</a>
+				</div>
+			</div>
+			<input type="submit" value="立即注册" id="btn">
+			<div id="footer">
+				<ul>
+					<li><a href="" class="qq"></a></li>
+					<li><a href="" class="sina"></a></li>
+					<li><a href="" class="douban"></a></li>
+					<li><a href="" class="weibo"></a></li>
+				</ul>
+				<div class="login"><a href="">登陆良仓</a></div>
+			</div>
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,105 @@
+*{
+				margin: 0;padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			body{
+				width: 100%;height: 100%;
+			}
+			dt,dd,li{
+				list-style: none;
+			}
+			#cover{
+				background:black ;opacity: 0.4;position: fixed;top: 0;left: 0;right: 0;bottom: 0;
+			}
+			#main{
+				width: 546px;position: absolute;top: 80px;left: 0;right: 0;bottom: 0;margin:auto;color: #333;
+			}
+			/*-----------------------------------logo----------------------------------*/
+#header{
+	width: 546px;height: 160px;position: relative;
+}
+#header a,#header img{
+	display: block;width: 226px;height: 106px;/*position:relative;left: -32px;margin-bottom: -18px;*/
+	position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto;
+}
+#section dl{
+	width: 546px;height: 50px;margin-bottom: 10px;
+}
+/*----------------------------------输入框---------------------------------*/
+#section dt{
+	width: 78px;height: 50px;line-height:50px;margin-right:8px;font-size: 14px;font-weight: bold;color: white;opacity: 0.9;padding-right: 20px;float: left;
+}
+#section dd input{
+	width: 300px;height: 50px;border: none;float: left;line-height: 50px;padding-left: 20px;background: white;opacity: 0.8;font-size: 14px;font-weight: bold;outline: none;
+}
+#section dl #code{
+	width: 225px;height: 50px;line-height: 50px;
+} 
+#section dl #scode{
+	width: 64px;height: 28px;float: left;margin: 10px;
+}
+#section dl .see{
+	display:block;width: 84px;font-size: 12px;color: white;float: left;margin-top: 16px;
+}
+#section dl dd #password{
+	width: 300px;height: 50px;
+}
+#section dl #pwdinfo{
+	width: 114px;height: 28px;margin-top: 10px;float: right;
+}
+#section dl #pwdbox{
+	width: 114px;height: 12px;background: url(../img/pro.png) no-repeat;float: left;margin-bottom: 4px;
+}
+#section dl .info{
+	width: 114px;height: 16px;font-size: 0px;color: #4c4c4c;display: flex;
+}
+#section dl .info span{
+	font-size: 12px;display: inline-block;width: 38px;justify-content: space-between;
+}
+#section dl .info span:nth-last-of-type(2){
+	text-align: center;
+}
+#section dl .info span:nth-of-type(3){
+	text-align: right;
+}
+#aside{
+	width: 320px;height: 38px;font-size: 12px;margin: 30px 0 0 106px;
+}
+#aside a{
+	color: #0c79cc;
+}
+#btn{
+	width: 300px;height: 50px;border: none;background: #25292e;font-size: 18px;color: white;cursor: pointer;font-weight: bold;margin-left: 106px;
+}
+#footer{
+	width: 310px;height: 40px;margin: 24px 0 0 100px;
+}
+#footer ul,#footer li{
+	float: left;
+}
+#footer li a{
+	display: block;width: 36px;height: 36px;margin-left:5px ;
+}
+#footer li a:hover{
+	opacity: 0.5;
+}
+#footer li .qq{
+	background: url(../img/qq.png) no-repeat top left;
+}
+#footer li .sina{
+	background: url(../img/sina.png) no-repeat top left;
+}
+#footer li .douban{
+	background: url(../img/douban.png) no-repeat top left;
+}
+#footer li .weibo{
+	background: url(../img/tengxun.png) no-repeat top left;
+}
+#footer .login a{
+	width: 60px;display: block;color: white;opacity: 0.9;font-size: 14px;float: right;
+}
+#footer .login a:hover{
+	color:dodgerblue;
+}
