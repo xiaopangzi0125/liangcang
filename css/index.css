@@ -19,18 +19,68 @@ img,input{
 	height: 100%;
 	background: white;
 }
-.slideshow{
+#slideshow{
 	width: 1000px;
-	height: 528px;
+	height: 475px;
 	margin: 0 auto;
 	position: relative;
 	margin-top:28px ;
+	overflow: hidden;
 }
-.slideshow img{
+#slideshow ul{
 	position: absolute;
 	top: 0;
 	left: 0;
 }
+#slideshow ul li {
+	width: 1000px;
+	height: 475px; 
+	float: left;
+}
+#slideshow ul li img{
+	display: block;
+}
+/*-------------------------翻页按钮和小方点----------------------*/
+#bigPages {
+	height:18px; 
+	width:1000px;
+	margin: 0 auto;
+	padding: 7px 0;
+	text-align: center;
+}
+#bigPages div{
+	width: 20px;
+	height: 4px;
+	background: #CACBCB;
+	font-size: 0;
+	display: inline-block;
+	margin: 0 3px;
+}
+#bigPages div.current {
+	background: red;
+}
+#bigPrev, #bigNext {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	opacity: 0.8;
+	cursor: pointer;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	margin:auto;
+	display: none;
+}
+
+#bigPrev{
+	background: #878787 url(../img/dl.png) no-repeat top left;
+	left: 20px;
+}
+#bigNext {
+	right:20px;
+	background: #878787 url(../img/dr.png) no-repeat  top left;
+}
+
 
 /*--------------------------商品详情----------------------------*/
 #content{
@@ -39,7 +89,6 @@ img,input{
 	overflow:hidden;
 	padding:20px;
 	margin: 0 auto;
-	border: 1px solid black;
 }
 #content h3{
 	font-size: 18px;
@@ -53,6 +102,26 @@ img,input{
 	float: left;
 	margin:0 20px 20px 0;
 	box-shadow: 0 0 4px 1px #CCCCCC;
+	position: relative;
+}
+/*-------------商品蒙板-------------*/
+#content .goods .goodsCover{
+	width: 282px;
+	height: 230px;
+	background:#666;
+	opacity: 0.5;
+	position:absolute;
+	top:0;
+	left: 0;
+	display: none;
+}
+#content .goods .goodsOver{
+	color: white;
+	position: absolute;
+	top:100px;
+	left: 100px;
+	font-size: 12px;
+	display: none;
 }
 #content .goods .title_goods{
 	width: 282px;
@@ -60,11 +129,27 @@ img,input{
 	background: white;
 	font-size: 12px;
 }
+#content .goods .divImg{
+	width: 282px;
+	height: 180px;
+	overflow: hidden;
+}
+#content .goods .divImg:hover~.goodsCover{
+	display: block;
+}
 #content .goods .divImg img{
 	width: 282px;
 	height: 180px;
-	display: block;
+	/*display: block;*/
 }
+#content .goods .divImg img:hover {
+	animation: mymove 2s;
+}
+@keyframes mymove{
+	from{transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+
 #content .goods .title_goods .one{
 	float: left;
 	padding: 18px 0 0 10px;
@@ -85,7 +170,6 @@ img,input{
 #content .slunbobox{
 	width: 282px;
 	height: 480px;
-	background: blue;
 	float: left;
 	margin-right: 20px;
 }
@@ -101,11 +185,12 @@ img,input{
 	top: 0;
 }
 
-#pages {
+#pages{
 	height:12px;
 	width:282px;
 	position: absolute; 
-	bottom: 0;
+	bottom: 20px;
+	left: 100px;
 }
 #pages div{
 	width: 12px;
@@ -115,8 +200,8 @@ img,input{
 	margin:5px; 
 	border-radius: 6px;
 }
-#pages div .current{
-	background: red;
+#pages div.current{
+	background: #333;
 }
 #prev, #next {
 	width: 25px;
@@ -431,35 +516,33 @@ img,input{
 }
 /*-------------------------楼层导航----------------------------------*/
 #menu{
-	width: 82px;
+	width: auto;
 	position: fixed;
 	right: 4px;
-	bottom: 200px;
+	bottom: 100px;
 	/*display: none;*/
 	color: white;
 }
 #menu li{
-	width: 82px;
-	height: 30px;
-	line-height: 30px;
+	width: 30px;
 	text-align: center;
 	cursor: pointer;
 	position: relative;
-	font-size: 12px;
+	font-size: 10px;
 	background: #666;
+	padding:16px 5px;
 }
 #menu li:hover{
 	background:#DB2726;
 }
 #menu li span{
 	display: none;
-	width: 82px;
-	height: 30px;
-	line-height: 30px;
+	width: 30px;
+	padding:10px 5px;
 	text-align: center;
 	cursor: pointer;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #CCCCCC;
+	background: #DB2726;
 }

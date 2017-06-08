@@ -5,7 +5,30 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
-		
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript">
+			$(function(){
+			$.ajax({
+				type:"get",
+				url:"../json/products.json",
+				async:true,
+				dataType:"json",
+				success:function(data){
+					var tade={
+						products:data
+					}
+				var html=template("item",tade);
+				$(".goods").append(html)
+				}
+				
+			});
+		})
+
+			
+		</script>
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -14,12 +37,12 @@
 				<div id="header">
 					<h1></h1>
 					<div class="rtbox">
-						<p id="register"><a href="">登录</a></p>
-						<p id="login"><a href="">注册</a></p>
+						<p id="register"><a href="login.html">登录</a></p>
+						<p id="login"><a href="register.html">注册</a></p>
 						<ul>
-							<li><a href="">购物车</a></li>
-							<li><a href="">消息</a></li>
-							<li class="lastop"><a href="">添加良品</a></li>
+							<li><a href="cart.html">购物车</a></li>
+							<li><a href="login.html">消息</a></li>
+							<li class="lastop"><a href="login.html">添加良品</a></li>
 						</ul>
 					</div>
 				</div>
@@ -30,7 +53,7 @@
 			<div id="nav">
 				<ul class="navigation">
 					<li class="firstl"><a href="">首页</a></li>
-					<li><a href="">商店</a></li>
+					<li><a href="list.html" id="allproducts">商店</a></li>
 					<li><a href="">杂志</a></li>
 					<li><a href="">分享</a></li>
 					<li><a href="">达人</a></li>
@@ -169,15 +192,20 @@
 		<!----------------------------内容-------------------------------------------->
 		<div id="contentbox">
 			<!------------------------轮播图------------------------------------------>
-			<div class="slideshow">
-				<img src="../img/01.jpg">
-				<img src="../img/02.jpg">
-				<img src="../img/03.jpg">
-				<img src="../img/04.jpg">
-				<img src="../img/05.jpg">
-				<img src="../img/06.jpg">
-				<img src="../img/07.jpg">
+			<div id="slideshow">
+				<ul>
+					<li><a href="bannerIntro.html"><img src="../img/01.jpg"></li></a>
+					<li><a href="bannerIntro.html"><img src="../img/02.jpg"></li></a>
+					<li><a href="bannerIntro.html"><img src="../img/03.jpg"></li></a>
+					<li><a href="bannerIntro.html"><img src="../img/04.jpg"></li></a>
+					<li><a href="bannerIntro.html"><img src="../img/05.jpg"></li></a>
+					<li><a href="bannerIntro.html"><img src="../img/06.jpg"></li></a>
+					<li><a href="bannerIntro.html"><img src="../img/07.jpg"></li></a>
+				</ul>
+				<div id="bigPrev"></div>
+				<div id="bigNext"></div>
 			</div>
+			<div id="bigPages"></div>
 			
 			<!-----------------------商品展示------------------------------------->
 			<div id="content">
@@ -190,9 +218,11 @@
 								<img src="../img/cont1.jpg">
 							</div>
 							<div class="title_goods">
-								<p class="one"><span>欧洲进口   家居生活馆</span></p>
+								<p class="one" style="position: relative;"><span>欧洲进口   家居生活馆</span></p>
 								<p class="two"><span>2</span>折起</p>
 							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
 						<div class="goods">
 							<div class="divImg">
@@ -211,10 +241,12 @@
 					</div>
 					<!---------------------小轮播图--------------------------->
 					<div class="slunbobox" id="scroll">
-						<dl>
-							<dt><img src="../img/sc1.jpg"></dt>
-							<dd><img src="../img/sc2.jpg"></dd>
-						</dl>
+						<ul>
+							<li><img src="../img/sc1.jpg"></li>
+							<li><img src="../img/sc2.jpg"></li>
+							<li><img src="../img/sc3.jpg"></li>
+							<li><img src="../img/sc4.jpg"></li>
+						</ul>
 						<div id="pages"></div>
 						<div id="prev"></div>
 						<div id="next"></div>
@@ -928,9 +960,27 @@
 			<li>6L<span>家居活动</span></li>
 			<li>7L<span>婴童活动</span></li>
 			<li>8L<span>海外活动</span></li>
-			<li>9L<span  style="display: block;">活动即将开始</span></li>
+			<li>9L<span>即将开始</span></li>
 			<li>10L<span>打折活动</span></li>
 			<li>顶部</li>
 		</ul>
+		
+		
+		
+		<script type="text/html" id="item">
+		<% for (var i = 0, len = products.length; i < len; i++) { 
+			var products = products[i];
+		%>
+		<div class="goods">
+			<img style="width: 100%;height: 100%;" src="<%= products.url %>">
+			<div class="title_goods">
+					<p class="one"><span><%= products.one %></span></p>
+					<p class="two"><span><%= products.two %></span>折起</p>
+			</div>
+		</div>
+		<% } %>
+		</script>
+
+
 	</body>
 </html>
