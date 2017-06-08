@@ -128,11 +128,14 @@ img,input{
 	height: 50px;
 	background: white;
 	font-size: 12px;
+	position: absolute;
+	bottom: 0;
 }
 #content .goods .divImg{
 	width: 282px;
 	height: 180px;
 	overflow: hidden;
+	position: relative;
 }
 #content .goods .divImg:hover~.goodsCover{
 	display: block;
@@ -467,17 +470,32 @@ img,input{
 
 /*--------------------------打折-----------------------------*/
 #content .sale{
-	width: 100%;
+	width: 890px;
 	height: 296px;
-	margin: 0 auto;
 }
 #content .sale .shoufengqinBox{
-	width: 100%;
-	height: 270px;
+	width: 890px;
+	height: 264px;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
+	box-shadow: 0 0 5px #000;
 }
-#content .sale img{
+#content .shoufengqinBox li{
+	width: 140px;
+	height: 262px;
+	float: left;
+	border-left: 1px solid #888;
+	box-shadow: 0 0 25px #000;
+	transition: all 0.5s;
+}
+#content .shoufengqinBox ul:hover li{
+	width: 40px;
+}
+#content .shoufengqinBox ul li:hover{
+	width: 420px;
+}
+/*#content .sale img{
 	border: 4px solid black;
 }
 #content .sale .im1{
@@ -509,10 +527,11 @@ img,input{
 	position: absolute;
 	left:488px;
 	top:0;
-}
+}*/
 #content .sale .sfq img{
-	width: 388px;
+	width: 420px;
 	height: 262px;
+	display: block;
 }
 /*-------------------------楼层导航----------------------------------*/
 #menu{
