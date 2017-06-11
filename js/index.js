@@ -1,15 +1,4 @@
 $(function(){
-/*鼠标经过nav边框滑过*/
-
-
-/*商品蒙板出现*/
-	/*$(".divImg").hover(function(){
-		$(".goodsCover").show();
-		$(".goodsOver").show();
-	},function(){
-		$(".goodsCover").hide();
-		$(".goodsOver").hide();
-	});*/
 
 
 /*大的无缝轮播图*/
@@ -21,7 +10,6 @@ $(function(){
 		timer = null,
 		html = "",
 		isMoving = false;//标记运动是否结束
-	console.log(len,imgWidth,$imgs)
 	
 	/*克隆头尾两张图片追加到开头和结尾*/
 	var first = $imgs.eq(0).clone(true),

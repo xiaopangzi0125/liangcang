@@ -65,11 +65,6 @@ $(function(){
 		})
 	}
 
-//购物车飞入效果
-
-
-
-
 //点击立即购买，跳转至确认页
 	$("#buynow").click(function(){
 		location:"结算页面还没写啊"
@@ -86,7 +81,7 @@ $(function(){
 		}
 	});
 	
-//点击购物车,购物车飞入效果,并且保存cookie
+//购物车飞入效果
 	$(function(){
 		$(".btn1").on("click",function(e){
 			console.log("111")
@@ -108,6 +103,8 @@ $(function(){
 			})
 		});	
 	});	
+	
+//点击购物车,保存cookie
 	$(".btn1").on("click",function(){
 		//获取页面的数据
 		var product_id = $("#like").text(),

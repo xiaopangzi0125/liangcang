@@ -44,8 +44,8 @@ $(function(){
 		}else{
 			$("#nav").css({position:"relative"});
 		}
-	})
-})
+	});
+});
 
 
 

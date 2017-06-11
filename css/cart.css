@@ -1,0 +1,155 @@
+/*----------------------------购物车--------------------*/
+#containerbox{
+	width: 100%;background: #25292e;
+}
+#cart{
+	width: 1000px;margin: 0 auto;color: #333;margin-bottom: 20px;
+}
+#cart .shopping{
+	width: 100%;margin-top: 50px;text-align: center;
+}
+#cart .shopping span{
+	font-size: 16px;padding: 0 25px;color:cornflowerblue ;border-right: 1px solid #ccc;border-left:  1px solid #ccc;;
+}
+#cart .cartBar .allpro{
+	/*border-bottom:2px solid cornflowerblue;*/padding:0 5px;width: 104px;height: 50px;line-height: 50px;font-size: 20px;
+}
+#cart #allNum{
+	margin-left: 8px;
+}
+#cart .cartTab{
+	width: 100%;height: 42px;border-top: 2px solid #ccc;line-height: 42px;background: #ededed;
+}
+#cart .template{
+	width: 100%;height: 70px;line-height: 70px;border-bottom: 1px solid #ccc;
+	font-size: 12px;
+}
+#cart .cartTab div,#cart .template div{
+	float: left;font-size: 12px;
+}
+#cart input,#calcTotal input{
+	margin: 0 10px;
+}
+#cart .checks{
+	width: 100px;padding-left: 20px;
+}
+#cart .product{
+	width: 200px;padding-left: 20px;
+}
+#cart .cartInner{
+	width: 160px;
+	height: 42px;
+	padding-left: 20px;
+}
+.price,.amount,.sum,.operate{
+	width: 100px;
+	padding-left: 20px;
+}
+#cart .template .count{
+	width: 50px;
+	height: 20px;
+	border: 1px solid #cacbcb;
+	margin: 0px;
+	outline: none;
+	padding: 3px 0;
+	text-align: center;
+	vertical-align: middle;
+}
+#cart .minus,#cart .add {
+	display: inline-block; 
+	width: 15px; 
+	text-align: center; 
+	border:1px solid #cacbcb; 
+	height:20px; 
+	line-height: 20px; 
+	cursor: default;
+	padding-bottom: 4px;
+	padding-top: 2px;
+	background: #ededed;
+}
+
+/*-------------------------结算部分--------------------------------------*/
+#calcTotal{
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto;
+	border: 1px solid #EDEDED;
+	font-size: 14px;
+}
+#calcTotal .select{
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	padding: 16px 0 20px 20px;
+	white-space: nowrap;
+	color: #666;
+}
+#calcTotal .calcLeft{
+	float: left;
+	width: 310px;
+	height: 50px;
+	line-height: 50px;
+}
+#calcTotal .calcLeft a{
+	float: left;
+	margin-left: 10px;
+	color: #666;
+}
+#calcTotal .calcLeft a:hover{
+	color: #e54346;
+}
+#calcTotal .calcRight{
+	width: 550px;
+	height: 50px;
+	float: right;
+}
+#calcTotal .calcRight .calcBtn{
+	float: right;
+}
+#calcTotal .calcRight .calcBtn a{
+	display: block;
+	width: 96px;
+	height: 54px;
+	line-height: 54px;
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: center;
+	background: #e54346;
+	overflow: hidden;
+}
+#calcTotal .calcRight .price_sum{
+	float: right;
+	height: 43px;
+	line-height: 43px;
+	margin: 7px 20px 0 10px;
+	width: auto;
+	color: #666;
+}
+#calcTotal .calcRight .price_sum .txt{
+	width: 50px;
+	color: #999;
+	text-align: right;
+	float: left;
+}
+#calcTotal .calcRight .price_sum .sumPrice{
+	display: inline-block;
+	text-align: right;
+}
+#calcTotal .calcRight .price_sum .sumPrice em{
+	font-size: 16px;
+	color: #e4393c;
+	font-weight: 700;
+}
+#calcTotal .calcRight .amount_sum{
+	float: right;
+	color: #999;
+	height: 44px;
+	line-height: 44px;
+	margin: 7px 0 0;
+	cursor: pointer;
+}
+#calcTotal .calcRight .amount_sum em{
+	color:#e4393c;
+	margin: 0 3px;
+	font-weight: 700;
+}
