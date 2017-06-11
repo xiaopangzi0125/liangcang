@@ -58,6 +58,7 @@
 	height: 46px;
 	margin: 0 auto;
 	border-bottom:4px solid #ededed;
+	background: white;
 }
 .navigation{
 	width: 764px;
@@ -96,7 +97,7 @@
 	outline: none;
 	position: absolute;
 	top:0;
-	right: -236px;
+	right: -240px;
 	border-bottom: 4px solid black;
 	/*animation: all 2s linear;*/
 }
@@ -308,7 +309,7 @@
 	height: 187px;
 	position: absolute;
 	top:-187px;left:0px;
-	/*display: none;*/
+	display: none;
 }
 #footer .footLeft .downcode dl{
 	float: left;
@@ -391,6 +392,7 @@
 	height: 145px;
 	background: url(../img/icon.png) no-repeat  0px -146px;
 	position: absolute;top: -190px;left: -60px;overflow: hidden;
+	display: none;
 }
 #footer .footRight ul .sina{
 	width: 23px;

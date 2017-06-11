@@ -9,23 +9,26 @@
 		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="../js/template-native.js"></script>
 		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
 		<script type="text/javascript">
-		$(function(){
-			$.ajax({
-				type:"get",
-				url:"../json/products.json",
-				async:true,
-				dataType:"json",
-				success:function(data){
-					var prods={
-						products:data
-					}
-				var html=template("item",prods);
-				$(".goods").append(html)
-				}
-				
-			});
-		})
+//		$(function(){
+//			$.ajax({
+//				type:"get",
+//				url:"../json/products.json",
+//				async:true,
+//				dataType:"json",
+//				success:function(responseData){
+//					var data={
+//						products:responseData
+//					}
+//				var html=template("item", data);
+//				$(".leftbox").append(html);
+////				$(".bottombox").append(html);
+////				$(".floor").append(html);
+//				}
+//				
+//			});
+//		})
 
 			
 		</script>
@@ -39,8 +42,11 @@
 					<div class="rtbox">
 						<p id="register"><a href="login.html">登录</a></p>
 						<p id="login"><a href="register.html">注册</a></p>
+						<div class="reg_hid">
+							<a href=""></a>
+						</div>
 						<ul>
-							<li><a href="cart.html">购物车</a></li>
+							<li><a href="cart.html" id="cart">购物车</a></li>
 							<li><a href="login.html">消息</a></li>
 							<li class="lastop"><a href="login.html">添加良品</a></li>
 						</ul>
@@ -213,8 +219,8 @@
 				<div class="newpro floor">
 					<h3>[&nbsp;&nbsp;<span>今日新品</span>&nbsp;&nbsp;]</h3>
 					<div class="leftbox">
-						<div class="goods">
-							<div class="divImg">
+						<!--<div class="goods">-->
+							<!--<div class="divImg">
 								<img src="../img/cont1.jpg">
 							</div>
 							<div class="title_goods">
@@ -223,24 +229,13 @@
 							</div>
 							<div class="goodsCover"></div>
 							<a href="list.html" class="goodsOver">7天后活动结束</a>
-						</div>
-						<div class="goods">
-							<div class="divImg">
-								<img src="../img/cont1.jpg">
-							</div>
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
-						</div>
+						</div>-->
+						
 					</div>
 					<!---------------------小轮播图--------------------------->
 					<div class="slunbobox" id="scroll">
 						<ul>
-							<li><img src="../img/sc1.jpg"></li>
+							<li style="display: block"><img src="../img/sc1.jpg"></li>
 							<li><img src="../img/sc2.jpg"></li>
 							<li><img src="../img/sc3.jpg"></li>
 							<li><img src="../img/sc4.jpg"></li>
@@ -250,7 +245,7 @@
 						<div id="next"></div>
 					</div>
 					<div class="bottombox">
-						<div class="goods">
+						<!--<div class="goods">
 							<p class="title_goods"></p>
 						</div>
 						<div class="goods">
@@ -294,14 +289,14 @@
 						</div>
 						<div class="goods">
 							<p class="title_goods"></p>
-						</div>
+						</div>-->
 					</div>
 				</div>
 				
 				<!--------------------热卖品牌----------------------------------->
 				<div class="hotpro floor">
 					<h3>[&nbsp;&nbsp;<span>热卖品牌</span>&nbsp;&nbsp;]</h3>
-					<div class="goods">
+					<!--<div class="goods">
 						<img>
 						<p class="title_goods"></p>
 					</div>
@@ -336,7 +331,7 @@
 					<div class="goods">
 						<img>
 						<p class="title_goods"></p>
-					</div>
+					</div>-->
 				</div>
 			
 				<!--------------------女式活动----------------------------------->
@@ -915,49 +910,23 @@
 		</ul>
 		
 		
-		
-		<!--<script type="text/html" id="item">
-		<% for (var i = 0, len = products.length; i < len; i++) { 
-			var products = products[i];
-		%>
-		<div class="goods">
-			<img style="width: 100%;height: 100%;" src="<%= products.url %>">
-			<div class="title_goods">
-				<p class="one"><span><%= products.one %></span></p>
-				<p class="two"><span><%= products.two %></span>折起</p>
-			</div>
-		</div>
-		<% } %>
-		</script>-->
-
 		<script type="text/html" id="item">
 			<% for(var i = 0,len = products.length;i < len;i++){
-				var products = products[i];
+				var prod = products[i];
 			%>	
-			<!--<div class="goods">
--->				<div class="divImg">
-					<img src="<%= products.url %>">
+			<div class="goods">				
+				<div class="divImg">
+					<img src="<%= prod.url %>">
 				</div>
-			<div class="title_goods">
-				<p class="one"><span><%= products.one %></span></p>
-				<p class="two"><span><%= products.two %></span>折起</p>
+				<div class="title_goods">
+					<p class="one"><span><%= prod.one %></span></p>
+					<p class="two"><span><%= prod.two %></span>折起</p>
+				</div>
+				<div class="goodsCover"></div>
+				<a href="list.html" class="goodsOver">7天后活动结束</a>
 			</div>
-			<div class="goodsCover"></div>
-			<a href="list.html" class="goodsOver">7天后活动结束</a>
-			<!--</div>-->
 			<% } %>
 			
-			
-			
-			<!--<div class="divImg">
-				<img src="../img/cont1.jpg">
-			</div>
-			<div class="title_goods">
-				<p class="one" style="position: relative;"><span>欧洲进口   家居生活馆</span></p>
-				<p class="two"><span>2</span>折起</p>
-			</div>
-			<div class="goodsCover"></div>
-			<a href="list.html" class="goodsOver">7天后活动结束</a>-->
 		</script>
 	</body>
 </html>

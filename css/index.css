@@ -84,7 +84,7 @@ img,input{
 
 /*--------------------------商品详情----------------------------*/
 #content{
-	width: 90%;
+	width:1000px;
 	height: auto;
 	overflow:hidden;
 	padding:20px;
@@ -179,15 +179,21 @@ img,input{
 #content #scroll{
 	position: relative;
 }
-#content .slunbobox img{
+#content .slunbobox li{
 	width: 282px;
 	height: 480px;
-	display: block;
+	display: none;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-
+#content #scroll img{
+	width: 282px;
+	height: 480px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
 #pages{
 	height:12px;
 	width:282px;
@@ -233,7 +239,7 @@ img,input{
 #content .goodsmore{
 	display:block;
 	clear:both;
-	margin-right: 20px;
+	margin-right: 114px;
 	font-size: 12px;
 	color: black;
 	padding-right: 8px;
@@ -379,6 +385,7 @@ img,input{
 	width: 100px;
 	height: 26px;
 	float: right;
+	margin-right: 98px;
 }
 .activeTime .div2 span{
 	font-size: 20px;

@@ -3,351 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<style type="text/css">
-			*{
-				margin: 0;padding: 0;
-			}
-			a{
-				text-decoration: none;
-			}
-			li{
-				list-style: none;
-			}
-			img{
-				border: 0;
-			}
-			/*-------------------顶部---------------------------*/
-			#topbox{
-				width: 100%;
-			}
-			#headerbox{
-				width: 100%;height: 56px;background: #25292e;
-			}
-			#header{
-				width: 1000px;margin: 0 auto;overflow: hidden;
-			}
-			#header h1{
-				width: 96px;height: 38px;margin-top: 10px;
-				float:left;background: url(img/icon.png) no-repeat ;
-			}
-			.rtbox{
-				width: 260px;height: 56px;float: right;font-size: 12px;
-			}
-			.rtbox p a{
-				line-height: 56px;color: #ccc;display: block;float: left;
-			}
-			#login a{
-				padding: 0 16px 0 8px;
-			}
-			.rtbox ul{
-				float: right;
-			}
-			.rtbox ul li{
-				float:left;background: url(img/bg1.png) no-repeat center left;line-height: 56px;
-			}
-			.rtbox ul li a{
-				color: #666;padding: 0 15px;
-			}
-			.rtbox ul li a:hover{
-				color: #ccc;
-			}
-			.lastop{
-				margin-right: -14px;
-			}
-			/*-----------------------nav导航----------------------------------------*/
-			#nav{
-				width: 1000px;height: 46px;margin: 0 auto;border-bottom:4px solid #ededed;
-			}
-			.navigation{
-				width: 764px;line-height: 46px;font-size: 14px;float: left;
-			}
-			.navigation li a{
-				float: left;display: block;padding:0 50px;text-align: center;margin-right: 36px;color: black;
-			}
-			.navigation li a:hover{
-				border-bottom: 4px solid black;
-			}
-			.navigation .firstl a{
-				padding: 0 80px 0 0;margin-right: 0px;
-			}
-			
-			/*--------------------------搜索----------------------------*/
-			#search{
-				width: 236px;height: 46px;line-height: 45px;border-bottom: 4px solid #2529e;float: right;
-			}
-			#search #sousuo{
-				width: 190px;height: 46px;border: none;float: left;
-			}
-			#search_icon{
-				width: 46px;height: 46px;float: right;
-				background: url(img/icon.png) no-repeat  -166px -142px;
-			}
-			
-			/*----------------------------全部商品列表--------------------*/
-			#nav_hid{
-				width: 1000px;height: 400px;background: rgba(0,0,0,0.6);position: absolute;left: 0;right: 0;margin: auto;z-index: 999;top:100px;display: none;
-			}
-			#nav_hid .snav{
-				width: 90%;display: flex;justify-content: space-around;padding: 30px 0 54px 0;margin: 0 auto;
-			}
-			#nav_hid .snav div{
-				width: 70px;
-			}
-			#nav_hid .snav p{
-				color: white;font-size: 15px;margin: 0 0 10px;
-			}
-			#nav_hid .snav ul{
-				margin-top: 0;margin-bottom: 10px;
-			}
-			#nav_hid .snav a{
-				color: #bbb;font-size: 12px;
-			}
-			#nav_hid .snav a:hover{
-				color: white;font-size: 14px;
-			}
-			#nav_hid .snav .secondList{
-				margin-left: 5px;border-left: 1px solid #bbb;padding-left: 8px;
-			}
-			#nav_hid .firstList{
-				color: #eee;
-			}
-			
-			/*------------------------文章右半部分------------------------------------*/
-			#topic{
-				width: 1000px;height: auto;margin: 0 auto;
-			}
-			.topic_Right{
-				position: fixed;margin-left: 728px;top:150px;width: 272px;overflow: hidden;
-			}
-			.topic_Right .intro_box .news{
-				height: 14px;margin-bottom: 10px;line-height: 14px;color: #333;font-size: 12px;
-			}
-			.topic_Right .intro_box .news span{
-				margin: 0 5px;
-			}
-			.topic_Right .intro_box .boxs{
-				width: 292px;height: 92px;padding-top: 14px;margin-bottom: 40px;border-top: 1px solid #CCCCCC;
-			}
-			.topic_Right .intro_box .boxs li{
-				float:left;width: 126px;margin-right: 20px;
-			}
-			.topic_Right .intro_box .pic{
-				display: block;width: 126px;height: 76px;
-			}
-			.topic_Right .intro_box .imgs1{
-				display:block;background: url(img/cb2.jpg) no-repeat;background-size: 126px 76px;
-			}
-			.topic_Right .intro_box .imgs2{
-				display:block;background: url(img/cb1.jpg) no-repeat;background-size: 126px 76px;
-			}
-			.topic_Right .intro_box .imgs3{
-				display:block;background: url(img/cb4.jpg) no-repeat;background-size: 126px 76px;
-			}
-			.topic_Right .intro_box .imgs4{
-				display:block;background: url(img/cb3.jpg) no-repeat;background-size: 126px 76px;
-			}
-			.topic_Right .intro_box .autor{
-				width: 126px;height: 22px;overflow: hidden;word-break: break-all;text-overflow: ellipsis;
-			}
-			.topic_Right .intro_box .autor a{
-				font-size: 12px; color: #333333;
-			}
-			/*------------------------文章左半部分-------------------------------------*/
-			.topic_Left{
-				width: 640px;padding-right: 42px;border-right: 1px solid #ededed;color: #333;
-			}
-			.topic_Left .toy{
-				width: 640px;height:640px;
-			}
-			.topic_Left h2{
-				font-size: 28px;margin: 20px 0px;font-weight: normal;
-			}
-			.topic_Left h3{
-				font-size: 16px;margin-bottom: 20px;font-weight: normal;text-align: center;
-			}
-			.topic_Left .sautor{
-				font-size: 12px;padding-bottom: 20px;border-bottom: 1px solid black;color: grey;
-			}
-			.topic_Left .egg{
-				width: 640px;height:450px;
-			}
-			.topic_Left p{
-				font-size: 16px;padding: 16px 0px;
-			}
-			.topic_Left .house{
-				width: 640px;height:350px;
-			}
-			.topic_Left .children{
-				width: 640px;height:500px;
-			}
-			.topic_Left .cs,.topic_Left .squr{
-				width: 640px;
-			}
-			.topic_Left .ayisitan{
-				width: 640px;height: 500px;
-			}
-			.topic_Left .prod{
-				margin-bottom: 20px;
-			}
-			.topic_Left .prod img{
-				width: 640px;border:1px solid #CCCCCC;display: block;
-			}
-			.topic_Left .saoma img{
-				width: 640px;
-			}
-			
-			/*-----------------------------图标more(以下为底部)-----------------------------*/
-			#more a{
-				display: block;width: 148px;height: 50px;margin: 90px auto 0;background: url(img/icon.png) no-repeat scroll 0px -640px;clear: both;
-			}
-			#more a:hover{
-				background: url(img/icon.png) no-repeat scroll 0px -688px
-			}
-			
-			/*----------------------------底部logo介绍------------------------------*/
-			#serviceBox{
-				width: 100%;text-align: center;clear: both;
-			}
-			#serviceBox .service{
-				width: 100%;padding: 51px 0 78px;border-top: 1px solid #ededed;background: #fbfdfe;margin: 90px auto 0;
-			}
-			#serviceBox .service .shop{
-				display: block;width: 208px;height: 16px;position: relative;margin: 0 auto;padding-left: 45px;background: url(img/icon.png) no-repeat 74px -416px;
-			}
-			#serviceBox .shop .hand{
-				width: 30px;height: 16px;position: absolute;top: 1px;background: url(img/icon.png) no-repeat  -173px -356px;overflow: hidden;
-			}
-			#serviceBox .service .sloge{
-				width: 1000px;margin: 0 auto;padding-top:42px ;overflow: hidden;
-			}
-			#serviceBox .service .sloge dl{
-				float: left;height: 60px;text-align: left;
-			}
-			#serviceBox .service .sloge dl dt{
-				width: 58px;height: 62px;
-			}
-			#serviceBox .service .sloge .pic1{
-				background: url(img/icon.png) no-repeat  2px -356px;float: left;
-			}
-			#serviceBox .service .sloge .pic2{
-				background: url(img/icon.png) no-repeat  -148px -218px;float: left;
-			}
-			#serviceBox .service .sloge .pic3{
-				background: url(img/icon.png) no-repeat  -56px -356px;float: left;
-			}
-			#serviceBox .service .sloge .pic4{
-				background: url(img/icon.png) no-repeat  -114px -356px;float: left;
-			}
-			#serviceBox .service .sloge dl dd{
-				width: 174px;padding: 10px 0 0 16px;letter-spacing: 1.2px;word-break: break-all;word-wrap: break-word;font-size: 12px;float: left;
-			}
-			#serviceBox .service .sloge .ch{
-				width: 100%;height: 24px;line-height: 24px;font-size: 14px;overflow: hidden;color: #737373;
-			}
-			#serviceBox .service .sloge .phone{
-				width: 117px;background: url(img/icon.png) no-repeat  0px -434px;
-			}
-			#serviceBox .service .sloge .en{
-				line-height: 22px;color: #ccc;
-			}
-			
-			/*-------------------------------底部公司介绍---------------------*/
-			#footbox{
-				width: 100%;background: #25292e;
-			}
-			#footer{
-				width: 1000px;margin: 0 auto;height: 222px;
-			}
-			#footer a{
-				color: #5c5c5c;
-			}
-			#footer .footLeft{
-				width: 800px;padding-top: 40px;float: left;
-			}
-			#footer .footLeft .down{
-				display: block;width: 196px;height: 44px;
-			}
-			#footer .footLeft .download{
-				width: 136px;height: 44px;padding-left: 60px;font-size: 14px;position: relative;
-			background: url(img/icon.png) no-repeat -174px 0px;
-			}
-			#footer .footLeft .download .iphone{
-				line-height: 18px;font-size: 14px;letter-spacing: 2px;
-			}
-			#footer .footLeft .download .clientdown{
-				margin-top: 7px;font-size: 14px;letter-spacing: 2px;
-			}
-			#footer .footLeft .download p:hover{ /*------------- 鼠标经过变色----------------*/
-				color:#999;
-			}
-			
-			/*-------------------------------客户端二维码------------------------*/
-			#footer .footLeft .downcode{
-				width: 260px;height: 187px;position: absolute;top:-187px;left:0px;/*display: none;*/
-			}
-			#footer .footLeft .downcode dl{
-				float: left;background: white;
-			}
-			#footer .footLeft .downcode dt{
-				width: 98px;height: 95px;
-			}
-			#footer .footLeft .downcode dd{
-				width: 98px;height: 52px;line-height: 52px;text-align: center;letter-spacing: 0;font-size: 12px;
-				color: #4d4d4d;
-			}
-			#footer .footLeft .downcode .Anrma{
-				padding-left: 20px;
-			}
-			#footer .footLeft .iphma dt{
-				border-right: 1px solid #d9d9d9;background: url(img/icon.png) no-repeat -100px -47px;padding-right: 20px;
-			}
-			#footer .footLeft .Anrma dt{
-				background: url(img/icon.png) no-repeat 0px -47px;
-			}
-			
-			/*-------------------------------公司地址--------------------------*/
-			#footer .footLeft .about{
-				font-size: 12px;letter-spacing: 3px;margin-top:30px ;height: 14px;margin-bottom: 8px;
-			}
-			#footer .footLeft .about li{
-				float: left;
-			}
-			#footer .footLeft .about li a{
-				display:block;height: 14px;padding: 0 8px 0 10px;border-left: 1px solid #5c5c5c;
-			}
-			#footer .footLeft .about .liFirst{
-				border-left: none;
-			}
-			#footer .footLeft p{
-				font-size: 12px;color: #5c5c5c;letter-spacing: 3px;
-			}
-			#footer .footLeft .about li a:hover{   /*-------------------- 鼠标经过变色----------------------*/
-				color:#bfbfbf;
-			}
-			
-			/*------------------------------微信登录方式(右半部分)----------------------*/
-			#footer .footRight{
-				width: 152px;height: 30px;padding-top: 45px;float: right;
-			}
-			#footer .footRight ul li a{
-				display: block;height: 20px;float: left;margin-left: 28px;position: relative;opacity: 0.2;
-			}
-			#footer .footRight ul .wechart{
-				width: 26px;background: url(img/icon.png) no-repeat  -100px -23px;
-			}
-			#footer .footRight ul .wechart_code{
-				width: 145px;height: 145px;background: url(img/icon.png) no-repeat  0px -146px;position: absolute;top: -190px;left: -60px;overflow: hidden;
-			}
-			#footer .footRight ul .sina{
-				width: 23px;background: url(img/icon.png) no-repeat  -150px -23px;
-			}
-			#footer .footRight ul .douban{
-				width: 18px;background: url(img/icon.png) no-repeat  -130px -23px;
-			}
-			#footer .footRight ul li a:hover{   /*-------------------- 鼠标经过变色----------------------*/
-				opacity: 1;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="../css/bannerIntro.css">
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -372,7 +31,7 @@
 			<div id="nav">
 				<ul class="navigation">
 					<li class="firstl"><a href="">首页</a></li>
-					<li><a href="">商店</a></li>
+					<li><a href="" id="allproducts">商店</a></li>
 					<li><a href="">杂志</a></li>
 					<li><a href="">分享</a></li>
 					<li><a href="">达人</a></li>
@@ -543,33 +202,33 @@
 			
 			<!------------------------文章左半部分------------------------------------->
 			<div class="topic_Left">
-				<div><img src="img/tp1.jpg" class="toy"></div>
+				<div><img src="../img/tp1.jpg" class="toy"></div>
 				<h2>想象力比知识重要，爱因斯坦童年最爱玩的积木</h2>
 				<div class="sautor">作者：良仓</div>
-				<div><img src="img/egg.gif" class="egg"></div>
+				<div><img src="../img/egg.gif" class="egg"></div>
 				<p>爱因斯坦曾说，“想象力比知识更重要”。比如说，看天空中的一片云，知识能教会你大气中凝结了水汽，而想象力则会让你看到梧桐蔷薇、苹果香蕉、汽车房屋、兔子麋鹿……</p>
 				<h3>想象力让我们不仅仅局限于眼前</h3>
-				<div><img src="img/house.jpg" class="house"></div>
+				<div><img src="../img/house.jpg" class="house"></div>
 				<p>在童年，积木是第一位告诉我们世界是可以握在手中且无限创造的那位好友，它赋予了我们想象力，人人都爱它。因为有想要创造的欲望，所以似乎每个人的童年都是在搭建积木的游戏中度过的。</p>
 				<p>对于孩子的成长来说，积木是必不可少的益智礼物。而对于现在的我们来说，积木或许是我们放松大脑捕获灵感的好帮手。</p>
-				<div><img src="img/children.jpg" class="children"></div>
+				<div><img src="../img/children.jpg" class="children"></div>
 				<p>说到积木的诞生要追溯到1837年，德国教育家弗里德里希·福禄贝尔（Friedrich Fröbel）创办了一所发展幼儿活动本能和自发活动的游戏活动机构，招收3-7岁幼儿，并为这个机构创造出了一个新词汇“幼儿园”。 </p>
-				<div><img src="img/cs.jpg" class="cs"></div>
+				<div><img src="../img/cs.jpg" class="cs"></div>
 				<p>福禄贝尔运用自己在数学和建筑学方面的专长，为儿童设计了6套玩具，以球、立方体和圆柱体为基本形态，供儿童触摸、抓握。这可能就是积木最早的原型了。</p>
-				<div><img src="img/p1.jpg" class="squr"></div>
+				<div><img src="../img/p1.jpg" class="squr"></div>
 				<p>没多久，有对德国兄弟在此基础上创造了一组可以搭起城楼模样的多种几何立体块。孩子们可以凭借自己的想象力，用这些木块搭建出属于自己的城堡。</p>
-				<div><img src="img/anisitan.jpg" class="ayisitan"></div>
+				<div><img src="../img/anisitan.jpg" class="ayisitan"></div>
 				<p>爱因斯坦出生后没几年，这种石楼积木的玩具已经在德国风靡，成为这位后来改变人类对宇宙认知的物理学家的最爱，他曾说，“想象力比知识更重要，因为知识是有限的，而想象力概括着世界的一切，推动着进步，并且是知识进化的源泉。”</p>
 				<h2>更多商品>>></h2>
-				<div class="prod"><a href=""><img src="img/pd1.jpg"></a></div>
-				<div class="prod"><a href=""><img src="img/pd2.jpg"></a></div>
-				<div class="prod"><a href=""><img src="img/pd3.jpg"></a></div>
-				<div class="prod"><a href=""><img src="img/pd4.jpg"></a></div>
-				<div class="prod"><a href=""><img src="img/pd5.jpg"></a></div>
-				<div class="prod"><a href=""><img src="img/pd6.jpg"></a></div>
-				<div class="saoma"><img src="img/intro.gif"></div>
-				<div class="saoma"><img src="img/erma.jpg"></div>
-				<div class="saoma"><img src="img/btt.jpg"></div>
+				<div class="prod"><a href=""><img src="../img/pd1.jpg"></a></div>
+				<div class="prod"><a href=""><img src="../img/pd2.jpg"></a></div>
+				<div class="prod"><a href=""><img src="../img/pd3.jpg"></a></div>
+				<div class="prod"><a href=""><img src="../img/pd4.jpg"></a></div>
+				<div class="prod"><a href=""><img src="../img/pd5.jpg"></a></div>
+				<div class="prod"><a href=""><img src="../img/pd6.jpg"></a></div>
+				<div class="saoma"><img src="../img/intro.gif"></div>
+				<div class="saoma"><img src="../img/erma.jpg"></div>
+				<div class="saoma"><img src="../img/btt.jpg"></div>
 			</div>
 		</div>
 		

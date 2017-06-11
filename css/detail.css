@@ -105,36 +105,62 @@ img{
 .products .showLeft{
 	float: left;
 }
-.products .showLeft .bigImg{
+#middleImg{
 	width: 350px;
 	height: 350px;
 	overflow: hidden;
 	position: relative;
 	background: white;
 }
-.products .showLeft .bigImg ul li img{
+#middleImg ul li img{
 	width: 350px;
 	height: 350px;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-.products .showLeft .listBox{
+#mark{
+	width: 153px;
+	height:153px;
+	background: black;
+	opacity: 0.2;
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+}
+#bigImg{
+	width: 350px;
+	height: 350px;
+	position:absolute;
+	left:564px;
+	top:141px;
+	overflow: hidden;
+	display: none;
+}
+#bigImg img{
+	position:absolute;
+	width: 802px;
+	height: 802px;
+}
+#listBox{
 	width: 350px;
 	height: 80px;
 	position: relative;
 	padding-top:15px ;
 	overflow: hidden;
 }
-.products .showLeft .listBox li{
-	width: 66px;
-	height: 66px;
+#listBox li{
+	width: 63px;
+	height: 63px;
 	cursor: pointer;
-	padding-top: 8px;
-	margin: 0 2px;
+	margin: 0 3px;
 	float: left;
 }
-.products .showLeft .listBox li img{
+#listBox li:nth-of-type(1){
+	border: 2px solid red;
+}
+#listBox li img{
 	width: 63px;
 	height: 63px;
 }

@@ -5,6 +5,12 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/detail.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/jquery.fly.min.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		<script type="text/javascript" src="../js/detail.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -28,11 +34,11 @@
 			<!-------------------------nav-------------------------------------------->
 			<div id="nav">
 				<ul class="navigation">
-					<li class="firstl"><a href="">首页</a></li>
-					<li><a href="">商店</a></li>
-					<li><a href="">杂志</a></li>
-					<li><a href="">分享</a></li>
-					<li><a href="">达人</a></li>
+					<li class="firstl"><a href="index.html">首页</a></li>
+					<li><a href="list.html" id="allproducts">商店</a></li>
+					<li><a href="index.html">杂志</a></li>
+					<li><a href="index.html">分享</a></li>
+					<li><a href="index.html">达人</a></li>
 				</ul>
 				<!--------------------搜索-------------------------------------------->
 				<div id="search">
@@ -217,12 +223,20 @@
 				<div class="products">
 					<!---------------商品图片（放大镜）----------------------------->
 					<div class="showLeft">
-						<div class="bigImg">
+						<div id="middleImg">
 							<ul>
-								<li><img src="../img/t41.jpg"></li>
+								<li><img src="../img/t41.jpg" class="url"></li>
+								<li><img src="../img/t42.jpg" class="url"></li>
+								<li><img src="../img/t43.jpg" class="url"></li>
 							</ul>
+							<div id="mark"></div>
 						</div>
-						<div class="listBox">
+						<div id="bigImg">
+							<img src="../img/t41.jpg" class="bigPic url">
+							<img src="../img/t42.jpg" class="url">
+							<img src="../img/t43.jpg" class="url">
+						</div>
+						<div id="listBox">
 							<ul>
 								<li><img src="../img/t41.jpg"></li>
 								<li><img src="../img/t42.jpg"></li>
@@ -249,9 +263,9 @@
 						<div class="amount">
 							数量：
 							<div class="mopt">
-								<a href=""></a>
-								<input type="text" class="inpt" value="1">
-								<a href=""></a>
+								<a href="javascript:void(0)" id="minu"></a>
+								<input type="text" class="inpt" value="1" maxlength="2" min="0" max="99">
+								<a href="javascript:void(0)" id="add"></a>
 							</div>
 						</div>
 						<div class="buyAll">

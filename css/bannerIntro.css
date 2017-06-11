@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.5px;
+}
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+li{
+	list-style: none;
+}
+img,input{
+	border: 0;
+}
+/*------------------------文章右半部分------------------------------------*/
+#topic{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+}
+.topic_Right{
+	position: fixed;
+	margin-left: 728px;
+	top:150px;
+	width: 272px;
+	overflow: hidden;
+}
+.topic_Right .intro_box .news{
+	height: 14px;
+	margin-bottom: 10px;
+	line-height: 14px;
+	color: #333;
+	font-size: 12px;
+}
+.topic_Right .intro_box .news span{
+	margin: 0 5px;
+}
+.topic_Right .intro_box .boxs{
+	width: 292px;
+	height: 92px;
+	padding-top: 14px;
+	margin-bottom: 40px;
+	border-top: 1px solid #CCCCCC;
+}
+.topic_Right .intro_box .boxs li{
+	float:left;
+	width: 126px;
+	margin-right: 20px;
+}
+.topic_Right .intro_box .pic{
+	display: block;
+	width: 126px;
+	height: 76px;
+}
+.topic_Right .intro_box .imgs1{
+	display:block;
+	background: url(../img/cb2.jpg) no-repeat;
+	background-size: 126px 76px;
+}
+.topic_Right .intro_box .imgs2{
+	display:block;
+	background: url(../img/cb1.jpg) no-repeat;
+	background-size: 126px 76px;
+}
+.topic_Right .intro_box .imgs3{
+	display:block;
+	background: url(../img/cb4.jpg) no-repeat;
+	background-size: 126px 76px;
+}
+.topic_Right .intro_box .imgs4{
+	display:block;
+	background: url(../img/cb3.jpg) no-repeat;
+	background-size: 126px 76px;
+}
+.topic_Right .intro_box .autor{
+	width: 126px;
+	height: 22px;
+	overflow: hidden;
+	word-break: break-all;
+	text-overflow: ellipsis;
+}
+.topic_Right .intro_box .autor a{
+	font-size: 12px; 
+	color: #333333;
+}
+/*------------------------文章左半部分-------------------------------------*/
+.topic_Left{
+	width: 640px;
+	padding-right: 42px;
+	border-right: 1px solid #ededed;
+	color: #333;
+}
+.topic_Left .toy{
+	width: 640px;
+	height:640px;
+}
+.topic_Left h2{
+	font-size: 28px;
+	margin: 20px 0px;
+	font-weight: normal;
+}
+.topic_Left h3{
+	font-size: 16px;
+	margin-bottom: 20px;
+	font-weight: normal;
+	text-align: center;
+}
+.topic_Left .sautor{
+	font-size: 12px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+	color: grey;
+}
+.topic_Left .egg{
+	width: 640px;
+	height:450px;
+}
+.topic_Left p{
+	font-size: 16px;
+	padding: 16px 0px;
+}
+.house,.children,.ayisitan{
+	width: 640px;
+	height:350px;
+}
+.topic_Left .cs,.topic_Left .squr,.topic_Left .saoma img{
+	width: 640px;
+}
+.topic_Left .prod{
+	margin-bottom: 20px;
+}
+.topic_Left .prod img{
+	width: 640px;
+	border:1px solid #CCCCCC;
+	display: block;
+}
