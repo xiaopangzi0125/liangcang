@@ -87,30 +87,33 @@ $(function(){
 	});
 	
 //点击购物车,购物车飞入效果,并且保存cookie
+	$(function(){
+		$(".btn1").on("click",function(e){
+			console.log("111")
+			//购物车飞入效果
+			var $fly = $("<img src='../img/01.jpg' style='position:absolute;width:100px'>"),
+				cartOffset = $("#cart").offset();
+				
+			$fly.fly({
+				start : {
+					top : e.pageY - $(window).scrollTop(),
+					left : e.pageX
+				},
+				end : {
+					top : cartOffset.top - $(window).scrollTop(),
+					left : cartOffset.left,
+					width : 0,
+					height : 0
+				}
+			})
+		});	
+	});	
 	$(".btn1").on("click",function(){
-		//购物车飞入效果
-		var $fly = $("<img src='..' style='position:absolute';width:100px>"),
-			cartOffset = $("#cart").offset();
-			
-		$fly.fly({
-			start : {
-				top : e.pageY - $(window).scrollTop(),
-				left : e.pageX
-			},
-			end : {
-				top : cartOffset.top - $(window).scrollTop(),
-				left : cartOffset.left,
-				width : 0,
-				height : 0
-			}
-		})
-		
-		
 		//获取页面的数据
 		var product_id = $("#like").text(),
 			product_name = $(".brand").text(),
 			product_price = $(".bprice").text(),
-			product_amount = $(".inpt").val(),
+			product_amount = Number($(".inpt").val()),
 			pic = $(".url").attr("src");
 		
 		var pro = {
@@ -121,10 +124,10 @@ $(function(){
 				url : pic
 		}
 		$.cookie.json = true;
-		var prod = $.cookie("products");
-		if(prod === null)
-			prod = [];
-		var index = inArray(product_id,prod);
+		var prod = $.cookie("products")||[];
+//		if(prod === null)
+//			prod = [];
+		var index = exist(product_id,prod);
 		//存到本地cookie保存
 		if(index === -1){
 			prod.push(pro);
@@ -141,14 +144,14 @@ $(function(){
 					name : product_name,
 					price : product_price,
 					amount : product_amount
-				}
+				},
 				success:function(data){
 					console.log(data)
 				}
 			});
 		}else{
 			//更新本地cookie
-			products[index].amount += Number(product_amount)
+			prod[index].amount += Number(product_amount)
 			//更新数据库购物车信息
 			$.ajax({
 				url:"../php/cart.php",
@@ -158,24 +161,23 @@ $(function(){
 					action:"update",
 					username:"test",
 					id : product_id,
-					amount:products[index].amount
+					amount:prod[index].amount
 				},
 				success:function(data){
 					console.log(data)
 				}
 			});
 		}
-		$.cookie("products",prod,{expires:7});
+		$.cookie("products",prod,{expires:7,path:"/"});
 		//判断商品是否存在的函数
-		function inArray(id,prod){
+		function exist(id,prod){
 			for(var i = 0,len = prod.length;i < len;i++){
 				if(prod[i].id === id)
 					return i;
 			}
 			return -1;
 		}
-	});
-	
+	});	
 });
 
 

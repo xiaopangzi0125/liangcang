@@ -8,9 +8,6 @@ textarea{overflow:auto;resize:none;}
 a{text-decoration:none;}
 a,button{cursor:pointer;}
 h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
-del,a,a:hover{text-decoration:none;}
-body,textarea,input,button,select,legend{font:12px/1.14 "微软雅黑",arial;color:#333;
-outline:none;}
-body{background:#fff;}
-/*.fd:after{display:block;content:"";clear:both;height: 0;visibility: hidden;overflow: hidden;}*/
+body,textarea,input,button,select,legend{outline:none;}
+body{background:#fff;overflow-x: hidden;}
 

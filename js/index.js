@@ -1,22 +1,4 @@
 $(function(){
-//异步模板加载数据
-	$.ajax({
-					type:"get",
-					url:"../json/products.json",
-					async:true,
-					dataType:"json",
-					success:function(responseData){
-						var data={
-							products:responseData
-						}
-					var html=template("item", data);
-					$(".leftbox").append(html);
-	//				$(".bottombox").append(html);
-	//				$(".floor").append(html);
-					}
-					
-				});
-
 /*鼠标经过nav边框滑过*/
 
 
@@ -156,7 +138,7 @@ $(function(){
 	$("#prev").click(function(){
 		nexIndex = currIndex - 1;
 		if(nexIndex < 0)
-			nexIndex = len - 1;
+			nexIndex = lens - 1;
 		moves();
 	})
 	
@@ -169,7 +151,7 @@ $(function(){
 		
 		currIndex = nexIndex;
 		nexIndex++;
-		if(nexIndex >= len)
+		if(nexIndex >= lens)
 			nexIndex = 0;
 	}
 

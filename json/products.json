@@ -1,6 +1,12 @@
 [
-	{"url":"../img/cont1.jpg","one":"ASH 穿出时尚范儿","two":"3.5"},
-	{"url":"../img/cont2.jpg","one":"GATEONE 潮流风尚 法式男装（满折）","two":"2.7"},
-	{"url":"../img/cont3.jpg","one":"BAN XIAOXUE 女装 保持初心的静默和柔软","two":"1.5"},
-	{"url":"../img/cont4.jpg","one":"FPLIFE LOCKBOOK 高颜值暗黑智能笔记本(全网首发）","two":"9.8"}
+	{
+		"url":["../img/cont1.jpg","../img/cont2.jpg","../img/cont3.jpg","../img/cont4.jpg"],
+		"one":["ASH 穿出时尚范儿","GATEONE 潮流风尚 法式男装（满折）","BAN XIAOXUE 女装 保持初心的静默和柔软","FPLIFE LOCKBOOK 高颜值暗黑智能笔记本(全网首发）"],
+		"two":["3.5","2.7","1.5","9.8"]
+	},
+	{
+		"url":["../img/bt1.jpg","../img/bt2.jpg","../img/bt3.jpg","../img/bt4.jpg","../img/bt5.jpg","../img/bt6.jpg","../img/bt7.jpg","../img/bt8.jpg","../img/bt9.jpg","../img/bt10.jpg","../img/bt11.jpg","../img/bt12.jpg"],
+		"one":["FOSSFLAKES 北欧妈妈的幸孕童话","VINCE CAMUTO 鞋柜里不缺少的美鞋专场","CHEAP MONDAY 男女装","PAULE KA 女人都爱的法式优雅","LA PRAIRIE 探寻肌肤恒久之美","GUCCI 不浮夸的高雅美包","SONIA RYKIEL 法国轻奢童装","ILIA  纯天然的美丽 孕妈咪快让自己美起来","FRETTE  意大利皇室奢华家居","STEIFF&OTHERS 小小动物园","SKIN CEUTICALS 修丽可 医学美容界首选推荐品牌"],
+		"two":["3.8","1.2","2.9","1","8.2","5","3.8","6.5","1.9","3.8","4"]
+	}
 ]

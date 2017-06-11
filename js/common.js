@@ -9,8 +9,16 @@ $(function(){
 	
 	/*点击搜索按钮出现搜索栏*/
 	$("#search_icon").click(function(){
-		$("#sousuo").animate({right: "0px"});
-	});
+		$(this).hide();
+		$("#search").show();
+		$("#sousuo").animate({right: "0px"}).focus()		
+	})
+	$("#sousuo").blur(()=>{
+		$("#search_icon").show();
+		$("#search").hide();
+		$("#sousuo").animate({right: "-500px"});
+			console.log("111")
+		});
 	
 	/*鼠标经过显示客户端二维码*/
 	$(".clientdown").on("mouseenter",function(){

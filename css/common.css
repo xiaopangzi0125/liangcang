@@ -59,9 +59,10 @@
 	margin: 0 auto;
 	border-bottom:4px solid #ededed;
 	background: white;
+	z-index: 9;
 }
 .navigation{
-	width: 764px;
+	width: 76%;
 	line-height: 46px;
 	font-size: 14px;
 	float: left;
@@ -84,12 +85,13 @@
 
 /*--------------------------搜索----------------------------*/
 #search{
-	width: 236px;
+	width: 24%;
 	height: 50px;
 	float: right;
 	line-height: 45px;
 	position: relative;
 	overflow: hidden;
+	display: none;
 }
 #sousuo{/*点击的效果*/
 	width: 236px;
@@ -98,7 +100,9 @@
 	position: absolute;
 	top:0;
 	right: -240px;
+	border: none;
 	border-bottom: 4px solid black;
+	
 	/*animation: all 2s linear;*/
 }
 #search_icon{
@@ -117,7 +121,7 @@
 	right: 0;
 	margin: auto;
 	z-index: 999;
-	top:105px;
+	top: 49px;
 	background: rgba(0,0,0,0.6);
 	display: none;
 }

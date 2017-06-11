@@ -5,33 +5,12 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/public.css">
 		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="../js/template-native.js"></script>
 		<script type="text/javascript" src="../js/index.js"></script>
 		<script type="text/javascript" src="../js/common.js"></script>
-		<script type="text/javascript">
-//		$(function(){
-//			$.ajax({
-//				type:"get",
-//				url:"../json/products.json",
-//				async:true,
-//				dataType:"json",
-//				success:function(responseData){
-//					var data={
-//						products:responseData
-//					}
-//				var html=template("item", data);
-//				$(".leftbox").append(html);
-////				$(".bottombox").append(html);
-////				$(".floor").append(html);
-//				}
-//				
-//			});
-//		})
-
-			
-		</script>
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -66,10 +45,10 @@
 				</ul>
 				<!--------------------搜索-------------------------------------------->
 				<div id="search">
-					<input type="text" placeholder="search..." id="sousuo">
-					<div id="search_icon"></div>
+					<input type="text" placeholder="search..." id="sousuo" onfocus="onfocus">
 				</div>
-			</div>
+				<div id="search_icon"></div>
+			
 			
 			<!-------------------------全部商品列表-------------------------------------->
 			<div id="nav_hid">
@@ -194,6 +173,7 @@
 				</div>
 			</div>
 		</div>
+		</div>
 		
 		<!----------------------------内容-------------------------------------------->
 		<div id="contentbox">
@@ -219,17 +199,60 @@
 				<div class="newpro floor">
 					<h3>[&nbsp;&nbsp;<span>今日新品</span>&nbsp;&nbsp;]</h3>
 					<div class="leftbox">
-						<!--<div class="goods">-->
-							<!--<div class="divImg">
-								<img src="../img/cont1.jpg">
+						<!-------------左半部分模板-------------------------------->
+						<script type="text/html" id="item">
+						<% for(var i = 0,len = products.length;i < len;i++){
+							var prod = products[i];
+						%>	
+							
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[0] %>">
 							</div>
 							<div class="title_goods">
-								<p class="one" style="position: relative;"><span>欧洲进口   家居生活馆</span></p>
-								<p class="two"><span>2</span>折起</p>
+								<p class="one"><span><%= prod.one[0] %></span></p>
+								<p class="two"><span><%= prod.two[0] %></span>折起</p>
+							</div>
+							<div class="goodsCover">
+								<a href="list.html" class="goodsOver">7天后活动结束</a>
+							</div>
+						</div>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[1] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[1] %></span></p>
+								<p class="two"><span><%= prod.two[1] %></span>折起</p>
 							</div>
 							<div class="goodsCover"></div>
 							<a href="list.html" class="goodsOver">7天后活动结束</a>
-						</div>-->
+						</div>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[2] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[2] %></span></p>
+								<p class="two"><span><%= prod.two[2] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
+						</div>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[3] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[3] %></span></p>
+								<p class="two"><span><%= prod.two[3] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
+						</div>
+						<% } %>
+						
+					</script>
 						
 					</div>
 					<!---------------------小轮播图--------------------------->
@@ -245,51 +268,159 @@
 						<div id="next"></div>
 					</div>
 					<div class="bottombox">
-						<!--<div class="goods">
-							<p class="title_goods"></p>
+						<!-------------下半部分模板-------------------------------->
+						<script type="text/html" id="item">
+						<% for(var i = 0,len = products.length;i < len;i++){
+							var prod = products[i];
+						%>	
+							
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[0] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[0] %></span></p>
+								<p class="two"><span><%= prod.two[0] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[1] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[1] %></span></p>
+								<p class="two"><span><%= prod.two[1] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[2] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[2] %></span></p>
+								<p class="two"><span><%= prod.two[2] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[3] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[3] %></span></p>
+								<p class="two"><span><%= prod.two[3] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[4] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[4] %></span></p>
+								<p class="two"><span><%= prod.two[4] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[5] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[5] %></span></p>
+								<p class="two"><span><%= prod.two[5] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[6] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[6] %></span></p>
+								<p class="two"><span><%= prod.two[6] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[7] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[7] %></span></p>
+								<p class="two"><span><%= prod.two[7] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[8] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[8] %></span></p>
+								<p class="two"><span><%= prod.two[8] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[9] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[9] %></span></p>
+								<p class="two"><span><%= prod.two[9] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[10] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[10] %></span></p>
+								<p class="two"><span><%= prod.two[10] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[11] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[11] %></span></p>
+								<p class="two"><span><%= prod.two[11] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
+						<div class="goods">				
+							<div class="divImg">
+								<img src="<%= prod.url[12] %>">
+							</div>
+							<div class="title_goods">
+								<p class="one"><span><%= prod.one[12] %></span></p>
+								<p class="two"><span><%= prod.two[12] %></span>折起</p>
+							</div>
+							<div class="goodsCover"></div>
+							<a href="list.html" class="goodsOver">7天后活动结束</a>
 						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
-						</div>
-						<div class="goods">
-							<p class="title_goods"></p>
-						</div>-->
+						<% } %>
+						
+					</script>
+						
 					</div>
 				</div>
 				
@@ -909,24 +1040,35 @@
 			<li>顶部</li>
 		</ul>
 		
+		<script type="text/javascript">
+			//异步模板加载数据
+//		$.ajax({
+//			type:"get",
+//			url:"../json/products.json",
+//			async:true,
+//			dataType:"json",
+//			success:function(responseData){
+//				var data={
+//					products:responseData
+//				}
+//			var html=template("item", data);
+//			$(".leftbox").append(html);
+////				$(".bottombox").append(html);
+////				$(".floor").append(html);
+//			}
+//					
+//		});
 		
-		<script type="text/html" id="item">
-			<% for(var i = 0,len = products.length;i < len;i++){
-				var prod = products[i];
-			%>	
-			<div class="goods">				
-				<div class="divImg">
-					<img src="<%= prod.url %>">
-				</div>
-				<div class="title_goods">
-					<p class="one"><span><%= prod.one %></span></p>
-					<p class="two"><span><%= prod.two %></span>折起</p>
-				</div>
-				<div class="goodsCover"></div>
-				<a href="list.html" class="goodsOver">7天后活动结束</a>
-			</div>
-			<% } %>
-			
+		$.getJSON('../json/products.json',function(responseData) {
+				var data = {
+					products : responseData
+				};
+				var html=template("item", data);
+				$(".leftbox").append(html);
+				$(".bottombox").append(html);
+				
+			});
+
 		</script>
 	</body>
 </html>
