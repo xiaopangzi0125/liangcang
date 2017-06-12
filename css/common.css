@@ -53,6 +53,9 @@
 	margin-right: -14px;
 }
 /*-----------------------nav导航----------------------------------------*/
+#navbox{
+	width: 100%;height: auto;
+}
 #nav{
 	width: 1000px;
 	height: 46px;

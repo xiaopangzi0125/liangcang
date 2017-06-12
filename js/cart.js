@@ -4,16 +4,16 @@ $(function(){
 	//引入尾部
 	$("#bottombox").load("../html/include/footer.html");
 	
-//	//点击继续购物，返回首页
-//	$(".continu").click(()=>{
-//		location:"index.html";
-//	});
+	//点击继续购物，返回首页
+	$(".continu").click(function(){
+		location: "index.html";
+	})
 	
 	
 	
 //读取cookie中保存的购物车商品信息
 	$.cookie.json = true;
-	var prod = $.cookie("products") || [];
+	var prod = $.cookie("products");
 	// 显示已选购的商品信息 
 	console.log(prod);
 	var data = {
@@ -39,9 +39,9 @@ $(function(){
 	})
 	
 	//点击+ - 增加/减少商品数量（0-99之间）
-	$("#cart").delegate(".add,.minu","click",function(){
+	$("#cart").delegate(".add,.minus","click",function(){
 		var $row = $(this).parents(".cartBody");
-		var pro = $row.data("product");
+		var pro = $row.data("products");
 		// 修改界面显示数量
 		if($(this).is(".add")){
 			++pro.amount;

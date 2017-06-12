@@ -1,30 +1,15 @@
-*{
-	margin: 0;
-	padding: 0;
-	letter-spacing: 0.5px;
-}
-a{
-	text-decoration: none;
-	cursor: pointer;
-}
-li{
-	list-style: none;
-}
-img,input{
-	border: 0;
-}
 /*------------------------文章右半部分------------------------------------*/
 #topic{
 	width: 1000px;
 	height: auto;
 	margin: 0 auto;
+	position: relative;
 }
 .topic_Right{
-	position: fixed;
-	margin-left: 728px;
-	top:150px;
 	width: 272px;
 	overflow: hidden;
+	float: right;
+	margin-top: 30px;
 }
 .topic_Right .intro_box .news{
 	height: 14px;
@@ -90,6 +75,7 @@ img,input{
 	padding-right: 42px;
 	border-right: 1px solid #ededed;
 	color: #333;
+	float: left;
 }
 .topic_Left .toy{
 	width: 640px;

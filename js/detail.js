@@ -1,4 +1,9 @@
 $(function(){
+//引入头部
+	$("#topbox").load("../html/include/header.html");
+	//引入尾部
+	$("#bottombox").load("../html/include/footer.html");
+	
 //放大镜效果
 	//获取大小图片的宽高
 	var smallWidth = $("#middleImg").outerWidth(),
@@ -86,7 +91,7 @@ $(function(){
 		$(".btn1").on("click",function(e){
 			console.log("111")
 			//购物车飞入效果
-			var $fly = $("<img src='../img/01.jpg' style='position:absolute;width:100px'>"),
+			var $fly = $("<img src='../img/ac9.jpg' style='position:absolute;width:100px'>"),
 				cartOffset = $("#cart").offset();
 				
 			$fly.fly({
@@ -108,7 +113,7 @@ $(function(){
 	$(".btn1").on("click",function(){
 		//获取页面的数据
 		var product_id = $("#like").text(),
-			product_name = $(".brand").text(),
+			product_name = $(".bname").text(),
 			product_price = $(".bprice span").text(),
 			product_amount = Number($(".inpt").val()),
 			pic = $(".url").attr("src");

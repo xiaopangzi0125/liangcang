@@ -6,11 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/list.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
 		<link rel="stylesheet" type="text/css" href="../css/public.css">
-		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../js/template-native.js"></script>
-		<script type="text/javascript" src="../js/list.js"></script>
-		<script type="text/javascript" src="../js/common.js"></script>
+		
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -19,8 +15,8 @@
 		<!-----------------------------商品导航--------------------------------------->
 		<div id="indexbox">
 			<div class="index">
-				<a href="">良仓</a>>
-				<a href="">商店</a>>
+				<a href="index.html">良仓</a>>
+				<a href="index.html">商店</a>>
 				<a href="">所有商品</a>>
 				<a href="">女装</a>>
 				连衣裙
@@ -94,25 +90,25 @@
 			
 		<!------------模板-------------------------->
 		<script type="text/html" id="list">
-		<%for(var i = 0;i < products.length;i++){ 
-			var prod = products[i];
-		%>
-			<div class="item">
+			<%for(var i = 0;i < products.length;i++){ 
+				var prod = products[i];
+			%>
+				<div class="item first">
 				<div class="img">
 					<a href=""><img src="<%= prod.url %>"></a>
 					<div class="cover"></div>
 				</div>
-				<a href="" class="intro">
+				<a href="detail.html" class="intro">
 					<p class="money">￥<%= prod.price %></p>
 					<p class="tle"><%= prod.title %></p>
-					<p class="desc"><%= prod.intro %></p>
+					<p class="desc"><%= prod.into %></p>
 				</a>
 				<div class="bar">
-					<a href="" class="who"><img src="<%= prod.logo %>"><%= prod.brand %></a>
-					<a href="" class="peach"></a>
+					<a href="javascript:void(0)" class="who"><img src="<%= prod.logo %>"><%= prod.brand %></a>
+					<a href="javascript:void(0)" class="peach"></a>
 				</div>
 			</div>
-		<% } %>
+			<% } %>
 		</script>
 		
 		<!------------商品数据---------------------->
@@ -121,11 +117,14 @@
 				var data = {
 					products : responseData
 				}
-				var html = template("list",data);
+				var html = template("list",data);    
 				$(".products").append(html)
 			});
 		</script>
-		
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		<script type="text/javascript" src="../js/list.js"></script>
 		
 	</body>
 </html>

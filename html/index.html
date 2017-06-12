@@ -6,11 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
 		<link rel="stylesheet" type="text/css" href="../css/public.css">
-		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../js/template-native.js"></script>
-		<script type="text/javascript" src="../js/index.js"></script>
-		<script type="text/javascript" src="../js/common.js"></script>
+		
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -534,8 +530,12 @@
 			<li>顶部</li>
 		</ul>
 		
-		<script type="text/javascript">
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
 		
+		<script type="text/javascript">
 		//加载楼层数据
 		$.getJSON('../json/products.json',function(responseData) {
 				var data = {
@@ -553,8 +553,7 @@
 			};
 			var html = template("report",data);
 			$(".activeContent").append(html);
-		})
-		
+		});
 		</script>
 	</body>
 </html>
