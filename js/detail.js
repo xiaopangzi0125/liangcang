@@ -109,7 +109,7 @@ $(function(){
 		//获取页面的数据
 		var product_id = $("#like").text(),
 			product_name = $(".brand").text(),
-			product_price = $(".bprice").text(),
+			product_price = $(".bprice span").text(),
 			product_amount = Number($(".inpt").val()),
 			pic = $(".url").attr("src");
 		
@@ -122,6 +122,7 @@ $(function(){
 		}
 		$.cookie.json = true;
 		var prod = $.cookie("products")||[];
+		console.log(prod)
 //		if(prod === null)
 //			prod = [];
 		var index = exist(product_id,prod);

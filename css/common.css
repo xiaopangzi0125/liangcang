@@ -99,11 +99,8 @@
 	outline: none;
 	position: absolute;
 	top:0;
-	right: -240px;
 	border: none;
 	border-bottom: 4px solid black;
-	
-	/*animation: all 2s linear;*/
 }
 #search_icon{
 	width: 46px;

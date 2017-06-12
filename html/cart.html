@@ -6,12 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/cart.css">
 		<link rel="stylesheet" type="text/css" href="../css/common.css">
 		<link rel="stylesheet" type="text/css" href="../css/public.css">
-		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../js/jquery.fly.min.js"></script>
-		<script type="text/javascript" src="../js/template-native.js"></script>
-		<script type="text/javascript" src="../js/cart.js"></script>
-		<script type="text/javascript" src="../js/common.js"></script>
 	</head>
 	<body>
 		<!----------------------------头部-------------------------------------------->
@@ -20,66 +14,67 @@
 		<!----------------------------购物车------------------------------------------>
 		<div id="contentbox">
 			<div id="cart">
-				<div class="shopping"><span>购物车</span><span class="continu">继续购物</span></div>
+				<div class="shopping"><span>购物车</span><span>继续购物</span></div>
 				<div class="cartBar">
 					<div class="allpro">全部商品<span id="allNum">0</span></div>
 				</div>
 				<div class="cartTab">
 					<div class="checks"><label><input type="checkbox" class="ck_all">全选</label></div>
-					<div class="product">良品</div>
-					<div class="cartInner"> </div>
-					<div class="price">单价</div>
-					<div class="amount">数量</div>
-					<div class="sum">小计</div>
-					<div class="operate">操作</div>
+					<div class="ct1">良品</div>
+					<div class="cartInner"></div>
+					<div>单价</div>
+					<div>数量</div>
+					<div>小计</div>
+					<div class="ct2">操作</div>
 				</div>
 				
-				<!-- 购物车商品信息行的模板 -->
-				<div class="template" <!--style="display: none;-->">
-					<div class="checks"><input type="checkbox" class="ck_product"></div>
-					<div class="product">书</div>
-					<div class="cartInner"> </div>
-					<div class="price"><span>￥</span>99</div>
-					<div class="amount"><span class="minus">-</span><input type="text" class="count" value="1"><span class="add">+</span></div>
-					<div class="sum"><span>￥</span>198</div>
-					<div class="operate"><a href="javascript:void(0)">删除</a></div>
-			<!--	</div>-->
-				<div class="template" <!--style="display: none;-->">
-					<div class="checks"><input type="checkbox" class="ck_product"></div>
-					<div class="product">书</div>
-					<div class="cartInner"> </div>
-					<div class="price"><span>￥</span>99</div>
-					<div class="amount"><span class="minus">-</span><input type="text" class="count" value="1"><span class="add">+</span></div>
-					<div class="sum"><span>￥</span>198</div>
-					<div class="operate"><a href="">删除</a></div>
+				<!--<div class="cartBody">
+					<div class="checks"><input type="checkbox" name="" class="ck_pro"></div>
+					<div class="pic"><img src="../img/bt8.jpg"></div>
+					<div class="name"><a href="detail.html">P743时尚太阳镜 | 板材材质【多色可选】 </a></div>
+					<div class="price">￥80</div>
+					<div class="amount">
+						<span class="minus">-</span><input type="text" class="count" value="2"><span class="add">+</span>
+					</div>
+					<div class="sub">198</div>
+					<div class="operate"><a href="javascript:void(0);">删除</a></div>
 				</div>
-				<div class="template" <!--style="display: none;-->">
-					<div class="checks"><input type="checkbox" class="ck_product"></div>
-					<div class="product">书</div>
-					<div class="cartInner"> </div>
-					<div class="price"><span>￥</span>99</div>
-					<div class="amount"><span class="minus">-</span><input type="text" class="count" value="1"><span class="add">+</span></div>
-					<div class="sum"><span>￥</span>198</div>
-					<div class="operate"><a href="">删除</a></div>
+			</div>	-->
+				
+				<!-- 使用arttemplate模板-->
+				<script type="text/html" id="cart_item">
+				<% for(var i = 0,len = products.length;i < len;i++){%>
+					<div class="cartBody">
+					<div class="checks"><input type="checkbox" name="" class="ck_pro"></div>
+					<div class="pic"><img src="<%= products[i].url %>"></div>
+					<div class="name"><a href="detail.html"><%= products[i].name %></a></div>
+					<div class="price">￥<%= products[i].price %></div>
+					<div class="amount">
+						<span class="minus">-</span><input type="text" class="count" value="<%= products[i].amount %>"><span class="add">+</span>
+					</div>
+					<div class="sub"><%= products[i].price*products[i].amount %></div>
+					<div class="operate"><a href="javascript:void(0);">删除</a></div>
 				</div>
-			</div>
+				<% } %>
+				</script> 
 			
-			<!-------------商品结算--------------------------------------->
+				
+			<!-------------商品结算------------------------------------->
 			<div id="calcTotal">
 				<div class="select">
 					<label><input type="checkbox" class="ck_all">全选</label>
 				</div>
 				<div class="calcLeft">
-					<a href="">删除选中的商品</a>
-					<a href="">移入收藏夹</a>
-					<a href="">分享</a>
+					<a href="javascript:void(0)">删除选中的商品</a>
+					<a href="javascript:void(0)">移入收藏夹</a>
+					<a href="javascript:void(0)">分享</a>
 				</div>
 				<div class="calcRight">
 					<div class="calcBtn"><a href="">结算</a></div>
 					<div class="price_sum">
 						<span class="txt">合计：</span>
 						<span class="sumPrice">
-							<em>￥3599</em>
+							<em>￥99</em>
 						</span>
 					</div>
 					<div class="amount_sum">选择<em>2</em>件商品</div>
@@ -89,5 +84,10 @@
 		
 		<!------------------------------------底部-------------------------------->
 		<div id="bottombox"></div>
+		
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		<script type="text/javascript" src="../js/cart.js"></script>
 	</body>
 </html>

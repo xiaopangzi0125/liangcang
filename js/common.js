@@ -1,5 +1,5 @@
 $(function(){
-	/*鼠标移入商品图标上上展示菜单*/
+	/*鼠标移入商品图标上展示菜单*/
 	$("#allproducts").on("mouseenter",function(){
 		$("#nav_hid").slideDown(800);
 	});
@@ -12,13 +12,12 @@ $(function(){
 		$(this).hide();
 		$("#search").show();
 		$("#sousuo").animate({right: "0px"}).focus()		
-	})
+	});
 	$("#sousuo").blur(()=>{
 		$("#search_icon").show();
 		$("#search").hide();
 		$("#sousuo").animate({right: "-500px"});
-			console.log("111")
-		});
+	});
 	
 	/*鼠标经过显示客户端二维码*/
 	$(".clientdown").on("mouseenter",function(){

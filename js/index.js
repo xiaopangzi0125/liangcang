@@ -1,5 +1,8 @@
 $(function(){
-
+//引入头部
+	$("#topbox").load("../html/include/header.html");
+//引入尾部
+	$("#bottombox").load("../html/include/footer.html");	
 
 /*大的无缝轮播图*/
 	var $imgs = $("#slideshow li"),
@@ -202,5 +205,14 @@ $(function(){
 		$("body,html").scrollTop(0);
 	});
 
+//活动上新tab栏切换
+	$(".div1").on("click",function(e){
+		var src = e.target();
+		
+	})
+
 
 });
+
+
+

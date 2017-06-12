@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/public.css">
+		<link rel="stylesheet" type="text/css" href="../css/confirm.css">
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+	</head>
+	<body>
+		<div id="topbox"></div>
+		<!-- 订单内容 -->
+		<div id="contentbox">
+			<h1>填写核对订单信息</h1>
+			<h2>收货人信息</h2>
+			<div class="address">
+				<div class="new">
+					<span class="newaddress">点击添加新地址</span>
+	
+				</div>
+				<div><span>收货人：</span><input type="text"></div>
+				<div><span>手机号码：</span><input type="text"></div>
+				<div class="adds"><span>省份:</span>
+					<select id="province"></select>
+					<select id="city"></select>
+					<select id="district"></select>
+				</div>
+				<div><span>地址：</span><input type="text"></div>
+				<div class="dyou"><span>邮编：</span><input type="text"><span class="ds2">
+					请使用准确邮编，方便您收货</span>
+				</div>
+				<div class="aa"><a class="cancel" href="#">取消</a>
+				<a class="save" href="#">保存</a></div>
+	
+			</div>
+	
+			<h2>配送及支付方式</h2>
+			<div class="paymethod">
+				<p>支付方式：在线支付</p>
+				<div class="method">
+					<span>配送方式：</span>
+					<div class="xuanze">
+						<label for=""><input type="radio"> 快递运输</label><br>
+						<label for=""><input type="radio">菜鸟自提</label>
+						
+					</div>
+				</div>
+			</div>
+			<h2>商品清单</h2>
+	<!-- 商品订单消息 -->
+			<div class="message">
+				<div class="cart">
+						<div class="mingcheng">
+							<img src="../img/ac1.jpg" alt="">
+							<span class="name">恒久真爱-恒久line-朱砂-19支-40cm长形</span>
+						</div>
+					
+						<div class="danjia">￥<span class="price">1999.0</span></div>
+				</div>
+			</div>
+		</div> 
+		<!------尾部------>
+		<div id="bottombox"></div>
+			
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		<script type="text/javascript" src="../js/confirm.js"></script>
+	</body>
+</html>

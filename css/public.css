@@ -9,5 +9,5 @@ a{text-decoration:none;}
 a,button{cursor:pointer;}
 h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
 body,textarea,input,button,select,legend{outline:none;}
-body{background:#fff;overflow-x: hidden;}
+body{overflow-x: hidden;}
 

@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="../../css/common.css">
-		<link rel="stylesheet" type="text/css" href="../../css/public.css">
-		<script type="text/javascript" src="../../js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="../../js/common.js"></script>
-	</head>
-	<body>
+
 		<div id="headerbox">
 			<div id="header">
 				<h1></h1>
 				<div class="rtbox">
-					<p id="register"><a href="">登录</a></p>
-					<p id="login"><a href="">注册</a></p>
+					<p id="register"><a href="../login.html">登录</a></p>
+					<p id="login"><a href="../register.html">注册</a></p>
 					<ul>
-						<li><a href="">购物车</a></li>
+						<li><a href="../cart.html">购物车</a></li>
 						<li><a href="">消息</a></li>
 						<li class="lastop"><a href="">添加良品</a></li>
 					</ul>
@@ -28,11 +18,11 @@
 		<!-------------------------nav-------------------------------------------->
 		<div id="nav">
 			<ul class="navigation">
-				<li class="firstl"><a href="">首页</a></li>
-				<li><a href="" id="allproducts">商店</a></li>
-				<li><a href="">杂志</a></li>
-				<li><a href="">分享</a></li>
-				<li><a href="">达人</a></li>
+				<li class="firstl"><a href="../index.html">首页</a></li>
+				<li><a href="../list.html" id="allproducts">商店</a></li>
+				<li><a href="../bannerIntro.html">杂志</a></li>
+				<li><a href="../bannerIntro.html">分享</a></li>
+				<li><a href="../bannerIntro.html">达人</a></li>
 			</ul>
 			<!--------------------搜索-------------------------------------------->
 			<div id="search">
@@ -163,5 +153,34 @@
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+<script type="text/javascript">
+	/*鼠标移入商品图标上展示菜单*/
+	$("#allproducts").on("mouseenter",function(){
+		$("#nav_hid").slideDown(800);
+	});
+	$("#nav_hid").on("mouseleave",function(){
+		$(this).slideUp(600);
+	});
+	
+	/*点击搜索按钮出现搜索栏*/
+	$("#search_icon").click(function(){
+		$(this).hide();
+		$("#search").show();
+		$("#sousuo").animate({right: "0px"}).focus()		
+	});
+	$("#sousuo").blur(()=>{
+		$("#search_icon").show();
+		$("#search").hide();
+		$("#sousuo").animate({right: "-500px"});
+	});
+	
+	//吸顶效果
+	var headerTop = $("#nav").offset().top;
+	$(window).on("scroll",function(){
+		if($(this).scrollTop() > headerTop){
+			$("#nav").css({position:"fixed",top:0});
+		}else{
+			$("#nav").css({position:"relative"});
+		}
+	});
+</script>
