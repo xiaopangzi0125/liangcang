@@ -28,43 +28,7 @@
 		<!----------------------------商品列表--------------------------------------->
 		<div id="contentbox">
 			<!-----------------------商品展示------------------------------------->
-			<div class="products">
-				<div class="item first">
-					<div class="img">
-						<a href=""><img src="../img/c1.jpg"></a>
-						<div class="cover"></div>
-					</div>
-					<a href="" class="intro">
-						<p class="money">￥80.00</p>
-						<p class="tle">经典车纸模型 | Play!系列 捷豹E-Tipe型号</p>
-						<p class="desc">"简约却不失独特，典雅的生活尽在独特的细节"有一种艺术叫做</p>
-					</a>
-					<div class="bar">
-						<a href="" class="who"><img src="../img/i1.jpg">B&O</a>
-						<a href="" class="peach"></a>
-					</div>
-				</div>
-				<div class="item">
-					<div class="img">
-						<a href=""><img src="../img/c2.jpg"></a>
-						<div class="intro"></div>
-					</div>
-					<div class="bar">
-						<a href="" class="who"><img src="../img/i1.jpg">B&O</a>
-						<a href="" class="peach"></a>
-					</div>
-				</div>
-				<div class="item">
-					<div class="img">
-						<a href=""><img src="../img/c3.jpg"></a>
-						<div class="intro"></div>
-					</div>
-					<div class="bar">
-						<a href="" class="who"><img src="../img/i1.jpg">B&O</a>
-						<a href="" class="peach"></a>
-					</div>
-				</div>
-			</div>
+			<div class="products"></div>
 			
 			<!---------------------------翻页------------------------------->
 			<div class="pager">
@@ -95,13 +59,13 @@
 			%>
 				<div class="item first">
 				<div class="img">
-					<a href=""><img src="<%= prod.url %>"></a>
+					<a href="#"><img src="<%= prod.url %>" class="move"></a>
 					<div class="cover"></div>
 				</div>
 				<a href="detail.html" class="intro">
 					<p class="money">￥<%= prod.price %></p>
 					<p class="tle"><%= prod.title %></p>
-					<p class="desc"><%= prod.into %></p>
+					<p class="desc"><%= prod.intro %></p>
 				</a>
 				<div class="bar">
 					<a href="javascript:void(0)" class="who"><img src="<%= prod.logo %>"><%= prod.brand %></a>
@@ -111,8 +75,20 @@
 			<% } %>
 		</script>
 		
-		<!------------商品数据---------------------->
+		
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/template-native.js"></script>
+		
 		<script type="text/javascript">
+			$(function(){
+				//引入头部
+				$("#topbox").load("../html/include/header.html");
+				//引入尾部
+				$("#bottombox").load("../html/include/footer.html");
+			});
+			
+			<!------------商品数据---------------------->
 			$.getJSON("../json/list.json",function(responseData){
 				var data = {
 					products : responseData
@@ -121,10 +97,6 @@
 				$(".products").append(html)
 			});
 		</script>
-		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../js/template-native.js"></script>
-		<script type="text/javascript" src="../js/list.js"></script>
 		
 	</body>
 </html>

@@ -5,7 +5,7 @@
 <!-------------------------------底部服务logo介绍------------------------>
 <div id="serviceBox">
 	<div class="service">
-		<a href="" class="shop">
+		<a href="../list.html" class="shop">
 			<p class="hand"></p>
 		</a>
 		<div class="sloge">
@@ -111,4 +111,9 @@
 		$(".wechart_code").hide();
 	});
 	
+	/*鼠标经过手势，开始移动*/
+	$(".hand").on("mouseenter",function(){
+		console.log(123)
+		$(this).stop().animate({left:"4px"}).trigger();
+	})
 </script>

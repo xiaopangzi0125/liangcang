@@ -181,7 +181,7 @@
 	var headerTop = $("#nav").offset().top;
 	$(window).on("scroll",function(){
 		if($(this).scrollTop() > headerTop){
-			$("#nav").css({position:"fixed",top:0});
+			$("#nav").css({position:"fixed",top:0,left:0,right:0,margin:"auto"});
 		}else{
 			$("#nav").css({position:"relative"});
 		}

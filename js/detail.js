@@ -72,7 +72,7 @@ $(function(){
 
 //点击立即购买，跳转至确认页
 	$("#buynow").click(function(){
-		location:"结算页面还没写啊"
+		location:"confirm.html";
 	});
 //点击+ - 增加/减少商品数量（0-99之间）
 	$("#minu").on("click",function(){
@@ -90,7 +90,7 @@ $(function(){
 	$(function(){
 		$(".btn1").on("click",function(e){
 			//购物车飞入效果
-			var $fly = $("<img src='../img/ac9.jpg' style='position:absolute;width:100px'>"),
+			var $fly = $("<img src='../img/che.jpg' style='position:absolute;width:100px'>"),
 				cartOffset = $("#fly").offset();
 			$fly.fly({
 				start : {
@@ -178,6 +178,15 @@ $(function(){
 			return -1;
 		}
 	});	
+	
+	//右侧商品数据加载
+	$.getJSON("../json/detail_guess.json",function(responseData){
+		var data = {
+			products : responseData
+		};
+		var html = template("rightGs",data);
+		$(".rightBox").append(html);
+	})
 });
 
 

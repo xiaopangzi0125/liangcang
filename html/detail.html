@@ -26,39 +26,27 @@
 				<!-----------------------------右侧栏（猜你喜欢）---------------------->
 				<div class="aside">
 					<div class="guess">猜你喜欢</div>
-					<div class="rightBox">
-						<div class="sbox">
-							<a href="">
-								<div class="pic">
-									<img src="../img/c15.jpg">
-								</div>
-								<p>英国Luckies软木留言板世界地图|记录下人生路途</p>
-							</a>
-							<div class="sname">Luckies</div>
-							<div class="sprice">￥294.00</div>
+					<div class="rightBox"></div>
+				</div>	
+				
+				<!-- 使用arttemplate模板-->
+				<script type="text/html" id="rightGs">
+				<%for(var i = 0;i < products.length;i++){
+					var prod = products[i];	
+				%>
+				<div class="sbox">
+					<a href="detail.html">
+						<div class="pic">
+							<img src="<%=prod.url %>">
 						</div>
-						<div class="sbox">
-							<a href="">
-								<div class="pic">
-									<img src="../img/c15.jpg">
-								</div>
-								<p>英国Luckies软木留言板世界地图|记录下人生路途</p>
-							</a>
-							<div class="sname">Luckies</div>
-							<div class="sprice">￥294.00</div>
-						</div>
-						<div class="sbox">
-							<a href="">
-								<div class="pic">
-									<img src="../img/c15.jpg">
-								</div>
-								<p>英国Luckies软木留言板世界地图|记录下人生路途</p>
-							</a>
-							<div class="sname">Luckies</div>
-							<div class="sprice">￥294.00</div>
-						</div>
-					</div>
+						<p><%=prod.title %></p>
+					</a>
+					<div class="sname"><%=prod.name %></div>
+					<div class="sprice">￥<%=prod.price %></div>
 				</div>
+				<% } %>
+				</script> 
+					
 				
 				<!---------------商品图片（放大镜）----------------------------->
 				<div class="products">
