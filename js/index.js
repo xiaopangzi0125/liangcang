@@ -1,8 +1,8 @@
 $(function(){
 //引入头部
-	$("#topbox").load("../html/include/header.html");
+	$("#topbox").load("include/header.html");
 //引入尾部
-	$("#bottombox").load("../html/include/footer.html");	
+	$("#bottombox").load("include/footer.html");	
 
 /*大的无缝轮播图*/
 	var $imgs = $("#slideshow li"),
@@ -205,11 +205,41 @@ $(function(){
 		$("body,html").scrollTop(0);
 	});
 
-//活动上新tab栏切换
-	$(".div1").on("click",function(e){
-		var src = e.target();
-		
-	})
+
+//加载楼层数据
+	$.getJSON("../json/products.json",function(responseData){
+		var data = {
+			products : responseData
+		};
+		//左半部分模板数据添加
+		var html = template("item",data);
+		$(".leftbox").append(html);
+		//下半部分模板数据添加
+		var result = template("bottom_temp",data);
+		$(".bottombox").append(result);
+		$(".hotpro").append(result);
+	});
+	
+	
+//预告活动tab切换
+	$(".actWeek").on("click",function(){
+		var index = $(this).index();
+		$.getJSON("../json/active"+index+".json",function(responseData){
+			var data = {
+				products : responseData
+			};
+			var result = template("report",data);
+			$(".activeContent").html(result);
+		});
+	}).eq(0).click();
+
+
+
+
+
+
+
+
 
 
 });

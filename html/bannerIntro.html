@@ -82,17 +82,18 @@
 		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 		<script type="text/javascript">
 			//引入头部
-			$("#topbox").load("../html/include/header.html");
+			$("#topbox").load("include/header.html");
 			//引入尾部
-			$("#bottombox").load("../html/include/footer.html");
+			$("#bottombox").load("include/footer.html");
 			
 			//当页面滚动时，固定右侧栏的位置
 			var fixHeight = $("#header").outerHeight();
 			var ly = $("#navbox").outerHeight();
+			var scTop = $(window).scrollTop();
 			$(window).on("scroll",function(){
-				console.log(123)
+				console.log(123);
 				if($(this).scrollTop() >= fixHeight){
-					$(".topic_Right").css({position: "fixed",top: ly,right:0})
+					$(".topic_Right").css({position: "absolute",top: ly+scTop,right:0})
 				}else{
 					$(".topic_Right").css({position: "inherit",float: "right"})
 				}

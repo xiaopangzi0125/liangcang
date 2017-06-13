@@ -28,34 +28,23 @@
 					<div class="ct2">操作</div>
 				</div>
 			</div>	
-				<!--<div class="cartBody">
-					<div class="checks"><input type="checkbox" name="" class="ck_pro"></div>
-					<div class="pic"><img src="../img/bt8.jpg"></div>
-					<div class="name"><a href="detail.html">P743时尚太阳镜 | 板材材质【多色可选】 </a></div>
-					<div class="price">￥80</div>
-					<div class="amount">
-						<span class="minus">-</span><input type="text" class="count" value="2"><span class="add">+</span>
-					</div>
-					<div class="sub">198</div>
-					<div class="operate"><a href="javascript:void(0);">删除</a></div>
-				</div>-->
 				
-				<!-- 使用arttemplate模板-->
-				<script type="text/html" id="cart_item">
-				<% for(var i = 0,len = products.length;i < len;i++){%>
-					<div class="cartBody">
-					<div class="checks"><input type="checkbox" name="" class="ck_pro"></div>
-					<div class="pic"><img src="<%= products[i].url %>"></div>
-					<div class="name"><a href="detail.html"><%= products[i].name %></a></div>
-					<div class="price">￥<%= products[i].price %></div>
-					<div class="amount">
-						<span class="minus">-</span><input type="text" class="count" value="<%= products[i].amount %>"><span class="add">+</span>
-					</div>
-					<div class="sub"><%= products[i].price*products[i].amount %></div>
-					<div class="operate"><a href="javascript:void(0);">删除</a></div>
+			<!-- 使用arttemplate模板-->
+			<script type="text/html" id="cart_item">
+			<% for(var i = 0,len = products.length;i < len;i++){%>
+			<div class="cartBody">
+				<div class="checks"><input type="checkbox" name="" class="ck_pro"></div>
+				<div class="pic"><img src="<%= products[i].url %>"></div>
+				<div class="name"><a href="detail.html"><%= products[i].name %></a></div>
+				<div class="price">￥<span><%= products[i].price %><span></div>
+				<div class="amount">
+					<span class="minus">-</span><input type="text" class="count" value="<%= products[i].amount %>"><span class="add">+</span>
 				</div>
-				<% } %>
-				</script> 
+				<div class="sub"><%= products[i].price*products[i].amount %></div>
+				<div class="operate"><a href="javascript:void(0);">删除</a></div>
+			</div>
+			<% } %>
+			</script> 
 			
 				
 			<!-------------商品结算------------------------------------->
@@ -69,7 +58,7 @@
 					<a href="javascript:void(0)">分享</a>
 				</div>
 				<div class="calcRight">
-					<div class="calcBtn"><a href="">结算</a></div>
+					<div class="calcBtn"><a href="confirm.html">结算</a></div>
 					<div class="price_sum">
 						<span class="txt">合计：</span>
 						<span class="sumPrice">

@@ -10,12 +10,12 @@
 		<div id="box">
 			<form action="" method="post">
 				<div id="login">
-					<div class="logo"><a><img src="../img/logo.png"></a></div>
-					<div>
-						<input type="text" placeholder="输入手机号" id="mobile">
+					<div class="logo"><a href="index.html"><img src="../img/logo.png"></a></div>
+					<div class="numbers">
+						<input type="text" placeholder="输入手机号" id="mobile"><span class="into"></span>
 					</div>
 					<div class="codes">
-						<input type="password" placeholder="输入密码" id="pwd">
+						<input type="password" placeholder="输入密码" id="pwd"><span class="error"></span>
 					</div>
 					<div class="choice">
 						<input type="checkbox" checked="checked" value="1">自动登录
@@ -27,5 +27,9 @@
 				</div>
 			</form>
 		</div>
+		
+		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/login.js"></script>
 	</body>
 </html>

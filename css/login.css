@@ -56,7 +56,12 @@ body{
 	background: url(../img/bg3.png) no-repeat 0px 6px;
 	outline: none;
 }
-
+.numbers{
+	position: relative;
+}
+#mobile .into{
+	position: absolute;right: 0;font-size: 14px;
+}
 
 /*---------------------------输入验证码------------------------*/
 

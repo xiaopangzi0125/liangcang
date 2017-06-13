@@ -15,12 +15,12 @@ $(function(){
 	$.cookie.json = true;
 	var prod = $.cookie("products");
 	// 显示已选购的商品信息 
-	console.log(prod);
+		
 	var data = {
 		products : prod
 	};
 	var html = template("cart_item",data);
-	$(".cartTab").after(html)
+	$(".cartTab").after(html);
 	
 	//点击全选，结算信息
 	$(".ck_all").click(function(){
@@ -38,42 +38,50 @@ $(function(){
 		}
 	})
 	
-	//点击+ - 增加/减少商品数量（0-99之间）
+	//点击+ - 增加/减少商品数量
 	$("#cart").delegate(".add,.minus","click",function(){
 		var $row = $(this).parents(".cartBody");
-		var pro = $row.data("products");
+		var num =  $(".count").val();
+		var price = Number($(".price span").text());
 		// 修改界面显示数量
 		if($(this).is(".add")){
-			++pro.amount;
+			++num;
 		}else{
-			if(pro.amount <= 1)
+			if(num <= 1)
 				return;
-			--pro.amount;
+			--num;
 		}
-		$row.find(".amount").val(pro.amount);
+		$row.find(".count").val(num);
 		// 修改显示小计
-		$row.children(".sub").text(pro.amount * pro.price);
+		$row.children(".sub").text(num * price);
 		// 显示合计
 		calcTotal();
 		// 修改cookie
-		$.cookie("products", _products, {expires:7});
+		var index = $(".cartBody").index($row);
+		prod[index].amount = num;
+		$.cookie("products",prod,{expires:7});
+		console.log(prod);
 	});
 	
 	//输入实现修改
-	$("#cart").on("blur","amount",function(){
-		var pro = $(this).parents(".cartBody").data("product");
+	$("#cart").on("blur",".count",function(){
+		var $row = $(this).parents(".cartBody");
+		var num = $(".count").val();
+		var price = Number($(".price span").text());
 		var reg = /^[1-9]\d*$/;
 		if(!reg.test($(this).val())){
-			$(this).val(pro.amount);
+			$(this).val(num);
 		}
 		// 输入数量正确
-		pro.amount = $(this).val();
+		num = $(this).val();
 		// 修改小计显示
-		$(this).parents(".cartBody").children(".sub").text(pro.price * pro.amount);
+		$(".sub").text(price * num);
 		//合计
 		calcTotal();
 		// 修改 cookie
-		$.cookie("products", _products, {expires:7});
+		var index = $(".cartBody").index($row);
+		prod[index].amount = num;
+		$.cookie("products", prod, {expires:7});
 	});
 	
 	//点击删除

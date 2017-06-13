@@ -89,11 +89,9 @@ $(function(){
 //购物车飞入效果
 	$(function(){
 		$(".btn1").on("click",function(e){
-			console.log("111")
 			//购物车飞入效果
 			var $fly = $("<img src='../img/ac9.jpg' style='position:absolute;width:100px'>"),
-				cartOffset = $("#cart").offset();
-				
+				cartOffset = $("#fly").offset();
 			$fly.fly({
 				start : {
 					top : e.pageY - $(window).scrollTop(),
@@ -127,7 +125,6 @@ $(function(){
 		}
 		$.cookie.json = true;
 		var prod = $.cookie("products")||[];
-		console.log(prod)
 //		if(prod === null)
 //			prod = [];
 		var index = exist(product_id,prod);
@@ -171,7 +168,7 @@ $(function(){
 				}
 			});
 		}
-		$.cookie("products",prod,{expires:7,path:"/"});
+		$.cookie("products",prod,{expires:7});
 		//判断商品是否存在的函数
 		function exist(id,prod){
 			for(var i = 0,len = prod.length;i < len;i++){
