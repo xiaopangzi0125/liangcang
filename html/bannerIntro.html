@@ -89,14 +89,13 @@
 			//当页面滚动时，固定右侧栏的位置
 			var fixHeight = $("#header").outerHeight();
 			var ly = $("#navbox").outerHeight();
-			var windowHeight = $(window).
+
 			$(window).on("scroll",function(){
-				var scTop = $(window).scrollTop();
-				var maxHeight = $("#serviceBox").;
-				if($(this).scrollTop() >= fixHeight){
+				var scTop = $(this).scrollTop();
+				if(fixHeight < scTop < 7500){
 					$(".topic_Right").css({position: "absolute",top:ly+scTop,right:0})
-				}else if($(this).scrollTop() >= ()){
-					$(".topic_Right").css({position: "inherit",float: "right"})
+				}else if(scTop >= 7500){
+					$(".topic_Right").css({position: "absolute",top:ly,right:0})
 				}
 			})
 		</script>

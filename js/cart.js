@@ -6,7 +6,7 @@ $(function(){
 	
 	//点击继续购物，返回首页
 	$(".continu").click(function(){
-		location: "index.html";
+		location= "index.html";
 	})
 	
 	
@@ -33,6 +33,8 @@ $(function(){
 		calcTotal();
 		if($(".cartBody :checkbox:checked").length === prod.length){
 			$(".ck_all").prop("checked",true);
+			$(this).css({backgroundColor:"#fffae8"});
+			console.log(123)
 		}else{
 			$(".ck_all").prop("checked",false);
 		}
@@ -41,8 +43,10 @@ $(function(){
 	//点击+ - 增加/减少商品数量
 	$("#cart").delegate(".add,.minus","click",function(){
 		var $row = $(this).parents(".cartBody");
-		var num =  $(".count").val();
-		var price = Number($(".price span").text());
+		var num =  $(this).siblings(".count").val();
+		//console.log(num);
+		var price = Number($(this).parents(".amount").siblings(".price").children("span").text());
+		console.log(price);
 		// 修改界面显示数量
 		if($(this).is(".add")){
 			++num;
@@ -53,7 +57,8 @@ $(function(){
 		}
 		$row.find(".count").val(num);
 		// 修改显示小计
-		$row.children(".sub").text(num * price);
+		$row.children(".sub").text(num * price*100/100);
+		console.log(num,price);
 		// 显示合计
 		calcTotal();
 		// 修改cookie
@@ -95,13 +100,31 @@ $(function(){
 		$.cookie("products",prod,{expires:7});
 	});
 	
+	//删除选中商品
+//	$(".delete").on("click",function(){
+//		if($(".cartBody :checkbox:checked")){
+//			var $row = $(this).parents("#contentbox").find(".cartBody");
+//			$row.remove();
+//			var pro = $row.data("product");
+//			var index = $.inArray(pro,prod);
+//			prod.splice(index,1);
+//			
+//			$.cookie("products",prod,{expires:7});
+//		}
+//	})
+	
 	//合计函数
 	function calcTotal(){
-		var sum = 0;
+		var sum = 0,
+			sumNum = 0;
 		$(".cartBody input:checked").each(function(index,element){
 			sum += Number($(element).parents(".cartBody").children(".sub").text());
+			sumNum += Number($(element).parents(".cartBody").find(".count").val());
+//			console.log(sumNum);
 		});
 		$(".sumPrice").children().text(sum.toFixed(2));
+		$(".amount_sum").children().text(sumNum.toFixed(0));
+		
 	}
 	
 });

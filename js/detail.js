@@ -72,7 +72,7 @@ $(function(){
 
 //点击立即购买，跳转至确认页
 	$("#buynow").click(function(){
-		location:"confirm.html";
+		location="confirm.html";
 	});
 //点击+ - 增加/减少商品数量（0-99之间）
 	$("#minu").on("click",function(){
@@ -103,7 +103,7 @@ $(function(){
 					width : 0,
 					height : 0
 				}
-			})
+			});
 		});	
 	});	
 	

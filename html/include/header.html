@@ -182,6 +182,7 @@
 	$(window).on("scroll",function(){
 		if($(this).scrollTop() > headerTop){
 			$("#nav").css({position:"fixed",top:0,left:0,right:0,margin:"auto"});
+			$("#nav_hid").css({position:"absolute",top:46,left:0,});
 		}else{
 			$("#nav").css({position:"relative"});
 		}

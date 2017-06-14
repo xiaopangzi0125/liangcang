@@ -22,7 +22,12 @@ body{
 	bottom: 0;
 	margin: 0 auto;
 }
-
+#login span{
+	color:red;
+	position:absolute;
+	right:-128px;
+	font-size:13px;
+}
 
 /*--------------------------logo------------------------------*/
 

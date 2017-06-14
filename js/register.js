@@ -54,8 +54,8 @@ $(function(){
 		if(phone!=="" && pwd!=="" && pwdsure!=="" && code!=="" && rights === ""){
 			var user = {
 				id : phone,
-				password : pwd
 			};
+			console.log(111111);
 			$(".success").text("注册成功,快去登录吧!").css({color:"limegreen"});
 			//保存到cookie中
 			$.cookie.json = true;

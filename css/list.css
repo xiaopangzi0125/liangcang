@@ -63,6 +63,9 @@
 .products .item:hover .intro{
 	display: block;
 }
+.products .item:hover .goCart{
+	display: block;
+}
 .products .first{
 	margin-left: 0px;
 }
@@ -76,6 +79,14 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	display: none;
+}
+.products .item .goCart{
+	width: 36px;
+	height: 40px;
+	position: absolute;
+	right: 15px;
+	top:6px;
 	display: none;
 }
 .products .item .intro{
