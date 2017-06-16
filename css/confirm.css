@@ -2,46 +2,81 @@
 
 #contentbox {
 	width: 1000px;
-	min-height: 900px;
 	margin: 0 auto;
 	padding-top: 40px;
 	border-bottom: 6px solid #000;
 	color: #666;
+	position: relative;
+	overflow: hidden;
 }
 
 #contentbox h1 {
-	width: 100%;
-	height: 20px;
+	width: 15%;
 	font-size: 20px;
 	text-align: center;
-	margin-bottom: 25px;
+	margin: 20px auto;
 	font-weight: normal;
+	background: url(../img/msg.jpg) no-repeat center left;
+	background-size: 24px 24px;
 }
+
+
 /*返回购物车*/
-.msgTop{width: 948px;background: #000;color: #fff;height: 30px;line-height: 30px;padding-left: 26px;padding-right: 26px;border-top-left-radius: 5px;border-top-right-radius: 5px;margin: 0 auto;}
-.msgTop span{color: #ff0;font-size: 12px;margin-left: 114px;}
-.msgTop .back{
+
+.msgTop {
+	width: 948px;
+	background: #000;
+	color: #fff;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 26px;
+	padding-right: 26px;
+	border-radius: 5px;
+	margin: 26px auto;
+}
+
+.msgTop span {
+	color: #ff0;
+	font-size: 12px;
+	margin-left: 114px;
+}
+
+.msgTop .back {
 	height: 20px;
 	float: right;
 	margin-top: 5px;
 }
+
+#contentbox .leftMsg {
+	width: 60%;
+	height: auto;
+	float: left;
+}
+
+#contentbox .rightMsg {
+	width: 40%;
+	height: auto;
+	float: right;
+}
+
 #contentbox h2 {
 	width: 100%;
 	height: 27px;
-	border-bottom: 1px solid #414141;
+	/*border-bottom: 1px solid #414141;*/
 	font-size: 14px;
 	line-height: 27px;
+	border-bottom: 2px solid #ccc;
 }
 
 #contentbox .address {
-	width: 900px;
-	height: 430px;
+	width: 97%;
+	height: 464px;
 	padding-left: 30px;
 }
 
-#contentbox .address div {
+#contentbox .address .write div {
 	height: 36px;
-	margin-top: 20px;
+	margin-top: 30px;
 	line-height: 36px;
 	width: 540px;
 }
@@ -78,32 +113,46 @@
 	width: 140px;
 	height: 34px;
 }
-#contentbox .address .write{
+
+#contentbox .address .write {
 	width: 540px;
-	height: 350px;
-	float: left;
 	margin-top: 10px;
 }
-#contentbox .address .write .new{
+
+#contentbox .address .write .new {
 	margin-top: 0px;
 }
-#contentbox .address .write .addplus{
-	color:#2ca1dc ;
+
+#contentbox .address .write .addplus {
+	color: #2ca1dc;
 }
-#contentbox .address .write .inpt{
+
+#contentbox .address .write .inpt {
 	width: 282px;
 }
-#contentbox .address .read{
+
+#contentbox .read {
 	float: right;
-	width: 350px;
+	width: 380px;
 	height: 320px;
-	border: 1px solid black;
+	margin-top: 10px;
+	font-size: 14px;
 }
+#contentbox .read span{
+	font-weight: bold;
+}
+#contentbox .over {
+	width: 374px;
+	height: 46px;
+	border: 2px solid #23afe4;
+	margin-top: 6px;
+}
+
 #contentbox .address .butn {
-	text-align: right;
-	width: 900px;
+	text-align: left;
+	/*width: 900px;*/
 	height: 36px;
-	float: right;
+	float: left;
 }
 
 #contentbox .address .butn a {
@@ -113,13 +162,13 @@
 	text-align: center;
 }
 
-#contentbox .address .butn .cancel {
-	background: #010c1133;
+#cancel {
+	background: #ccc;
 	color: #000;
 }
 
-#contentbox .address .butn .save {
-	background: #1c94d1;	
+#save {
+	background: #3a9cce;
 	color: #fff;
 }
 
@@ -152,9 +201,11 @@
 	font-size: 14px;
 }
 
+
 /* 配送方式 */
+
 .delivery {
-	margin:20px 0 40px 56px;
+	margin: 20px 0 20px 0;
 }
 
 .delivery button {
@@ -177,14 +228,16 @@
 	margin-left: 30px;
 }
 
-.pay div,.express div {
+.pay div,
+.express div {
 	border: 2px solid #ddd;
 	box-sizing: content-box;
 	text-align: center;
 	cursor: pointer;
 }
 
-.pay div:hover,.express div:hover {
+.pay div:hover,
+.express div:hover {
 	border: 2px solid #476DB9;
 }
 
@@ -192,7 +245,8 @@
 	margin: 3px 0;
 }
 
-.pay span,.express span {
+.pay span,
+.express span {
 	color: #f60;
 }
 
@@ -253,6 +307,7 @@
 
 .click_pay,.express {
 	position: relative;
+	margin-bottom: 16px;
 }
 
 .arrow {
@@ -264,59 +319,129 @@
 	background: url(../img/cart_new.png) no-repeat -72px -25px;
 	display: none;
 }
+
+
 /*提交订单*/
-#refer input{
-	width:150px;
+
+#refer input {
+	width: 150px;
 	height: 50px;
 	background: #ccc;
 	text-align: center;
 	line-height: 50px;
-	border:0;
-	position:absolute;
-	top:20px;
-	right:30px;
+	border: 0;
+	position: absolute;
+	top: 20px;
+	right: 30px;
 	color: white;
 	font-size: 16px;
 }
 
+
 /*商品订单消息*/
 
-#contentbox .message{
-	width: 64%;
+#contentbox .message {
+	width: 100%;
 	height: auto;
+	margin-bottom: 40px;
 }
+
 #contentbox .cartTab {
 	width: 100%;
 	border-top: 2px solid #ccc;
 	line-height: 42px;
 	background: #ededed;
 }
-#contentbox .cartTab div{
+
+#contentbox .cartTab div {
 	width: 200px;
 	height: 42px;
 	border-bottom: 1px solid #ccc;
 	float: left;
 	text-align: center;
 }
-.list,.prodSure{height: 36px;line-height: 36px;width: 93%;font-size: 14px;}
-.list li{float: left;}
-.list li:nth-of-type(1),.list li:nth-of-type(3),.list li:nth-of-type(4),.list li:nth-of-type(5){width: 15%;}
-.list li:nth-of-type(2){width: 40%;}
-.refer p:nth-of-type(1) span{display: block;}
-.refer p:nth-of-type(3){height: 36px;background: #2ca1dc;color: #fff;line-height: 36px;text-align: center;cursor: pointer;width: 140px;float: right;margin-top: 20px;}
-.refer{text-align: right;padding: 60px 21px 0 0;}
 
-/*商品模板样式*/
-.prodSure{height: 36px;line-height: 36px;width: 93%;font-size: 14px;background: #fffae8;border: 1px solid #ededed;}
-.prodSure div{
+.list,.prodSure {
+	height: 36px;
+	line-height: 36px;
+	width: 100%;
+	font-size: 14px;
+}
+
+.list li {
 	float: left;
 }
-.num,.price,.amounts,.stock{
-	width: 15%
+
+.list li:nth-of-type(1),.list li:nth-of-type(3),.list li:nth-of-type(4),.list li:nth-of-type(5) {
+	width: 13%;
+	padding-left: 2%;
 }
-.prodSure .name{
+
+.list li:nth-of-type(2) {
 	width: 40%;
 }
 
+.refer p:nth-of-type(1) span {
+	display: block;
+}
+
+.refer p:nth-of-type(3) {
+	height: 36px;
+	background: #3a9cce;
+	color: #fff;
+	line-height: 36px;
+	text-align: center;
+	cursor: pointer;
+	width: 140px;
+	margin-top: 20px;
+}
+
+.refer {
+	text-align: right;
+	padding: 60px 21px 0 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 20px;
+}
 
 
+/*商品模板样式*/
+
+.prodSure {
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	font-size: 12px;
+	background: #f5f5f5;
+	border: 1px solid #ededed;
+}
+
+.prodSure div {
+	float: left;
+}
+
+.pic,.price,.amounts,.sum {
+	width: 13%;
+	padding-left: 2%;
+	height: 100%;
+}
+
+.pic img {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	border: 1px solid #000;
+}
+
+.prodSure .name {
+	width: 40%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+}
+
+#pro_total,#total{
+	color: black;
+}

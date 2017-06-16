@@ -1,11 +1,11 @@
 
 <!------------------------------图标more--------------------------->
-<div id="more"><a href="../list.html"></a></div>
+<div id="more"><a href="list.html"></a></div>
 		
 <!-------------------------------底部服务logo介绍------------------------>
 <div id="serviceBox">
 	<div class="service">
-		<a href="../list.html" class="shop">
+		<a href="list.html" class="shop">
 			<p class="hand"></p>
 		</a>
 		<div class="sloge">
@@ -114,6 +114,7 @@
 	/*鼠标经过手势，开始移动*/
 	$(".hand").on("mouseenter",function(){
 		console.log(123)
-		$(this).stop().animate({left:"4px"}).trigger();
+		$(this).stop().animate({left:"30px"},"slow").animate({left:"0px"},"slow");
+		
 	})
 </script>

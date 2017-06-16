@@ -5,10 +5,10 @@ body{
 	background-size:auto;
 }
 .lb{
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: bold;
 	position: absolute;
-	right: -24px;
+	right: -10px;
 	margin-top: 15px;
 	color: red;
 }

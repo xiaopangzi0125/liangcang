@@ -131,8 +131,9 @@ $(function(){
 		//存到本地cookie保存
 		if(index === -1){
 			prod.push(pro);
+			
 			//上传到数据库保存
-			$.ajax({
+			/*$.ajax({
 				type:"get",
 				url:"../php/cart.php",
 				async:true,
@@ -167,7 +168,9 @@ $(function(){
 					console.log(data)
 				}
 			});
-		}
+		}*/
+		
+		
 		$.cookie("products",prod,{expires:7});
 		//判断商品是否存在的函数
 		function exist(id,prod){

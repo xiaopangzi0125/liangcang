@@ -13,104 +13,100 @@
 		<div id="contentbox">
 			<h1>订单信息</h1>
 			<p class="msgTop">结账<button class="back">返回购物车</button></p>
-			<h2>收货人信息>>></h2>
-			<div class="address">
-				<div class="write">
-					<div class="new">
-						<span class="addplus">点击添加新地址:</span>
-					</div>
-					<div><span>收货人：</span><input type="text"></div>
-					<div><span>手机号码：</span><input type="text"></div>
-					<div class="adds"><span>省份:</span>
-						<select id="province"></select>
-						<select id="city"></select>
-						<select id="district"></select>
-					</div>
-					<div><span>地址：</span><input type="text" class="inpt"></div>
-					<div class="mail"><span>邮编：</span><input type="text"><span class="ds2">
-						请使用准确邮编，方便您收货</span>
-					</div>
-				</div>
-				<div class="read">
-					<div class="over"></div>
-				</div>
-				<div class="butn">
-					<a class="cancel" href="#">取消</a>
-					<a class="save" href="#">保存</a>
-				</div>
-	
-			</div>
-	
-			<h2>配送及支付方式>>></h2>
-			<div class="delivery">
-				<div class="pay">
-					<p>请选择支付方式</p>
-					<div class="pay_online click_pay cli">
-						<img src="../img/pay_online.png" alt="">
-						<i class="arrow"></i>
-					</div>
-					<div class="pay_type0 click_pay cli">
-						<b><img src="../img/pay_type_0.png" alt=""></b>
-						<span>货到付款</span>
-						<i class="arrow"></i>
+			<div class="leftMsg">
+				<h2>收货人信息>>></h2>
+				<div class="address">
+					<div class="write">
+						<div class="new">
+							<span class="addplus">添加新地址:</span>
+						</div>
+						<div><span>收货人：</span><input type="text" class="men"></div>
+						<div><span>手机号码：</span><input type="text" class="iphone"><span class="into"></span></div>
+						<div class="adds"><span>省份:</span>
+							<select id="province"></select>
+							<select id="city"></select>
+							<select id="district"></select>
+						</div>
+						<div><span>地址：</span><input type="text" class="inpt"></div>
+						<div class="mail"><span>邮编：</span><input type="text" class="email"><span class="ds2">
+							请使用准确邮编，方便您收货</span>
+						</div>
+						<div class="butn">
+							<a id="save" href="#">保存</a>
+							<a id="cancel" href="#">取消</a>
+						</div>
 					</div>
 				</div>
-				<div class="express">
-					<p>请选择运送方式<span>商品数量满5件或商品总金额满268元顺丰包邮</span></p>
-					<div class="express cli">
-						<img src="../img/shunfeng.png" alt="">
-						<span>免邮费</span>
-						<i class="arrow"></i>
+				<h2>配送及支付方式>>></h2>
+				<div class="delivery">
+					<div class="pay">
+						<p>请选择支付方式</p>
+						<div class="pay_online click_pay cli">
+							<img src="../img/pay_online.png" alt="">
+							<i class="arrow"></i>
+						</div>
+						<div class="pay_type0 click_pay cli">
+							<b><img src="../img/pay_type_0.png" alt=""></b>
+							<span>货到付款</span>
+							<i class="arrow"></i>
+						</div>
 					</div>
-					<div class="express cli">
-						<img src="../img/yt.png" alt="">
-						<span>免邮费</span>
-						<i class="arrow"></i>
+					<div class="express">
+						<p>请选择运送方式<span>商品数量满5件或商品总金额满268元顺丰包邮</span></p>
+						<div class="express cli">
+							<img src="../img/shunfeng.png" alt="">
+							<span>免邮费</span>
+							<i class="arrow"></i>
+						</div>
+						<div class="express cli">
+							<img src="../img/yt.png" alt="">
+							<span>免邮费</span>
+							<i class="arrow"></i>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			
-			<h2>商品清单>>></h2>
-			<!-- 商品订单消息 -->
-			<div class="message">
-				<ul class="list">
-					<li>商品编号</li>
-					<li>商品名</li>
-					<li>价格</li>
-					<li>库存状态</li>
-					<li>数量</li>
-				</ul>
-				<div class="prodSure">
-					<div class="num">vc</div>
-					<div class="name">cfxgfg</div>
-					<div class="price">￥</div>
-					<div class="stock">vfbczb</div>
-					<div class="amounts">54</div>
-				</div>
-			</div> 
-			<div class="refer">
-				<p>商品金额小计：¥<b id="pro_total">0</b><span>运费：¥0</span></p>
-				<p>订单实付：¥<b id="total">0.00</b></p>
-				<p id="submit">提交订单</p>
-			</div>	
-			
 				
-			<!-- 使用arttemplate模板-->
-			<script type="text/html" id="cart_over">
-			<% for(var i = 0,len = products.length;i < len;i++){%>
-				<div class="prodSure">
-					<div class="num"><%= products[i].id %></div>
-					<div class="name"><%= products[i].name %></div>
-					<div class="price">￥<span><%= products[i].price %></div>
-					<div class="stock"><%= products[i].stock %></div>
-					<div class="amounts"><%= products[i].amount %></div>
+				<h2>商品清单>>></h2>
+				<!-- 商品订单消息 -->
+				<div class="message">
+					<ul class="list">
+						<li>商品图片</li>
+						<li>商品名</li>
+						<li>价格</li>
+						<li>数量</li>
+						<li>金额</li>
+					</ul>
+				</div> 
+			</div>
+			<div class="rightMsg">
+				<div class="read">
+					<span>地址:</span>
 				</div>
-			<% } %>
-			</script> 
+				
+				<div class="refer">
+					<p>商品金额小计：¥<b id="pro_total">0</b><span>运费：¥0</span></p>
+					<p>订单实付：¥<b id="total">0.00</b></p>
+					<p id="submit">提交订单</p>
+				</div>	
+			</div>
+		</div>		
 		
 		<!------尾部------>
 		<div id="bottombox"></div>
+		
+		<!-- 使用arttemplate模板-->
+		<script type="text/html" id="cart_over">
+		<% for(var i = 0,len = products.length;i < len;i++){%>
+			<div class="prodSure">
+				<div class="pic"><img src="<%= products[i].pic %>"></div>
+				<div class="name"><%= products[i].name %></div>
+				<div class="price">￥<span><%= products[i].price %></div>
+				<div class="amounts"><%= products[i].amount %></div>
+				<div class="sum"><%= products[i].sub %></div>
+			</div>
+		<% } %>
+		</script> 
+		
 			
 		<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.cookie.js"></script>

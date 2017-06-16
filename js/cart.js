@@ -14,6 +14,7 @@ $(function(){
 //读取cookie中保存的购物车商品信息
 	$.cookie.json = true;
 	var prod = $.cookie("products");
+	console.log(prod);
 	// 显示已选购的商品信息 
 		
 	var data = {
@@ -21,6 +22,10 @@ $(function(){
 	};
 	var html = template("cart_item",data);
 	$(".cartTab").after(html);
+	
+	//显示添加商品个数
+	$("#allNum").text($(".cartBody").length);
+	console.log($(".cartBody").length);
 	
 	//点击全选，结算信息
 	$(".ck_all").click(function(){
@@ -33,10 +38,10 @@ $(function(){
 		calcTotal();
 		if($(".cartBody :checkbox:checked").length === prod.length){
 			$(".ck_all").prop("checked",true);
-			$(this).css({backgroundColor:"#fffae8"});
 			console.log(123)
 		}else{
 			$(".ck_all").prop("checked",false);
+//			$(this).parents(".cartBody").css({backgroundColor:"#fffae8"});
 		}
 	})
 	
@@ -92,26 +97,31 @@ $(function(){
 	//点击删除
 	$("#cart").on("click","a",function(e){
 		e.preventDefault();
-		var $row = $(this).parents(".cartBody");
-		var pro = $row.data("product");
-		var index = $.inArray(pro,prod);
-		prod.splice(index,1);
-		$row.remove();
-		$.cookie("products",prod,{expires:7});
+		if(confirm("确定删除选中商品么？")){
+			var $row = $(this).parents(".cartBody");
+			var pro = $row.data("product");
+			var index = $.inArray(pro,prod);
+			prod.splice(index,1);
+			$row.remove();
+			$.cookie("products",prod,{expires:7});
+			$("#allNum").text($(".cartBody").length);
+		}
 	});
 	
 	//删除选中商品
-//	$(".delete").on("click",function(){
-//		if($(".cartBody :checkbox:checked")){
-//			var $row = $(this).parents("#contentbox").find(".cartBody");
-//			$row.remove();
-//			var pro = $row.data("product");
-//			var index = $.inArray(pro,prod);
-//			prod.splice(index,1);
-//			
-//			$.cookie("products",prod,{expires:7});
-//		}
-//	})
+	$(".delete").on("click",function(){
+		if(confirm("是否删除选中商品？")){
+			$(".cartBody :checkbox:checked").each(function(index,element){
+				$row = $(element).parents(".cartBody");
+				$row.remove();
+				var pro = $row.data("products");
+				var index = $.inArray(pro,prod);
+				prod.splice(index,1);
+				$.cookie("products",prod,{expires:7});
+				$("#allNum").text($(".cartBody").length);
+			})
+		}
+	})
 	
 	//合计函数
 	function calcTotal(){
@@ -126,5 +136,35 @@ $(function(){
 		$(".amount_sum").children().text(sumNum.toFixed(0));
 		
 	}
+	
+	
+//点击结算按钮，保存选中商品的cookie
+	$(".calcBtn").on("click",function(e){
+		var products = [];
+		$(".cartBody :checkbox:checked").each(function(index,element){
+			var _pic = $(element).parents().siblings(".pic").children("img").attr("src");
+			var _name = $(element).parents().siblings(".name").children("a").text();
+			var _price = $(element).parents().siblings(".price").children("span").text();
+			var _amount = $(element).parents().siblings(".amount").find(".count").val();
+			var _sub = $(element).parents().siblings(".sub").text();
+			var prod = {
+				pic:_pic,
+				name:_name,
+				price:_price,
+				amount:_amount,
+				sub : _sub
+			}
+			products.push(prod);
+			console.log(prod);
+		
+			//保存入cookie
+			$.cookie("prods",products,{expires:7});
+		});
+		
+		if($(".cartBody :checkbox:checked").length === 0){
+			alert("您还没有勾选商品")
+			e.preventDefault();
+		}
+	});
 	
 });
